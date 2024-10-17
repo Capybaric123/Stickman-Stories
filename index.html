@@ -35,13 +35,25 @@
             bullets: []
         };
 
+        // Shape settings
+        var shapes = [];
+        for (let i = 0; i < 10; i++) {
+            shapes.push({
+                type: Math.random() < 0.5 ? 'square' : 'triangle',
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: 20,
+                color: Math.random() < 0.5 ? 'yellow' : 'red'
+            });
+        }
+
         // Update the canvas size
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
 
-        // Draw the player and bullets
+        // Draw the player, bullets, and shapes
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -71,6 +83,53 @@
                 ctx.arc(bullet.x, bullet.y, 5, 0, Math.PI * 2);
                 ctx.fill();
             });
+
+            // Draw random shapes
+            shapes.forEach(shape => {
+                if (shape.type === 'square') {
+                    drawRoundedRect(shape.x, shape.y, shape.size, shape.color, 'black');
+                } else if (shape.type === 'triangle') {
+                    drawRoundedTriangle(shape.x, shape.y, shape.size, shape.color, 'black');
+                }
+            });
+        }
+
+        function drawRoundedRect(x, y, size, fillColor, strokeColor) {
+            const radius = size / 5; // Set radius relative to size
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + size - radius, y);
+            ctx.arcTo(x + size, y, x + size, y + radius, radius);
+            ctx.lineTo(x + size, y + size - radius);
+            ctx.arcTo(x + size, y + size, x + size - radius, y + size, radius);
+            ctx.lineTo(x + radius, y + size);
+            ctx.arcTo(x, y + size, x, y + size - radius, radius);
+            ctx.lineTo(x, y + radius);
+            ctx.arcTo(x, y, x + radius, y, radius);
+            ctx.closePath();
+
+            ctx.fillStyle = fillColor;
+            ctx.fill();
+
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        function drawRoundedTriangle(x, y, size, fillColor, strokeColor) {
+            const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
+            ctx.beginPath();
+            ctx.moveTo(x, y); // Top vertex
+            ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
+            ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
+            ctx.closePath();
+
+            ctx.fillStyle = fillColor;
+            ctx.fill();
+
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = 2;
+            ctx.stroke();
         }
 
         // Update the player's position and momentum
@@ -124,17 +183,15 @@
             if (keys['s']) {
                 player.momentum = Math.min(player.momentum + player.speed * 0.1, player.maxMomentum);
             }
-            // Rotate left
+            // Move left (without rotating)
             if (keys['a']) {
-                player.angle -= 0.05; // Rotate left
-                player.x -= Math.cos(player.angle) * 2; // Move left
-                player.y -= Math.sin(player.angle) * 2; // Move left
+                player.x -= Math.cos(player.angle + Math.PI / 2) * player.speed * 0.1; // Move left
+                player.y -= Math.sin(player.angle + Math.PI / 2) * player.speed * 0.1; // Move left
             }
-            // Rotate right
+            // Move right (without rotating)
             if (keys['d']) {
-                player.angle += 0.05; // Rotate right
-                player.x += Math.cos(player.angle) * 2; // Move right
-                player.y += Math.sin(player.angle) * 2; // Move right
+                player.x += Math.cos(player.angle + Math.PI / 2) * player.speed * 0.1; // Move right
+                player.y += Math.sin(player.angle + Math.PI / 2) * player.speed * 0.1; // Move right
             }
 
             // Update bullets position
