@@ -1,77 +1,106 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-const player = {
-    x: canvas.width / 2,
-    y: canvas.height / 2,
-    size: 20,
-    speed: 5,
-    color: 'blue',
-    bullets: []
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const shapes = [];
+const gridSize = 50; // Size of each grid cell
+const shapeColors = {
+    square: 'yellow',
+    triangle: 'red',
+    hexagon: 'purple',
 };
 
-document.addEventListener('keydown', (event) => {
-    switch (event.key) {
-        case 'ArrowUp':
-            player.y -= player.speed;
-            break;
-        case 'ArrowDown':
-            player.y += player.speed;
-            break;
-        case 'ArrowLeft':
-            player.x -= player.speed;
-            break;
-        case 'ArrowRight':
-            player.x += player.speed;
-            break;
-        case ' ':
-            shootBullet();
-            break;
+class Shape {
+    constructor(x, y, type) {
+        this.x = x;
+        this.y = y;
+        this.size = 30; // Size of the shape
+        this.vx = (Math.random() - 0.5) * 2; // Random velocity
+        this.vy = (Math.random() - 0.5) * 2; // Random velocity
+        this.type = type;
+        this.friction = 0.98; // Friction to simulate "soap" physics
     }
-});
 
-function shootBullet() {
-    const bullet = {
-        x: player.x,
-        y: player.y,
-        radius: 5,
-        speed: 7
-    };
-    player.bullets.push(bullet);
+    update() {
+        // Update position based on velocity
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Apply friction
+        this.vx *= this.friction;
+        this.vy *= this.friction;
+
+        // Stop movement if below threshold
+        if (Math.abs(this.vx) < 0.01) this.vx = 0;
+        if (Math.abs(this.vy) < 0.01) this.vy = 0;
+    }
+
+    draw() {
+        ctx.fillStyle = shapeColors[this.type];
+        ctx.beginPath();
+        switch (this.type) {
+            case 'square':
+                ctx.rect(this.x, this.y, this.size, this.size);
+                break;
+            case 'triangle':
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(this.x + this.size, this.y);
+                ctx.lineTo(this.x + this.size / 2, this.y - this.size);
+                ctx.closePath();
+                break;
+            case 'hexagon':
+                ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+                for (let i = 1; i <= 6; i++) {
+                    ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i * 2 * Math.PI / 6));
+                }
+                break;
+        }
+        ctx.fill();
+    }
+}
+
+function spawnShape() {
+    const types = Object.keys(shapeColors);
+    const type = types[Math.floor(Math.random() * types.length)];
+    const x = Math.floor(Math.random() * canvas.width / gridSize) * gridSize;
+    const y = Math.floor(Math.random() * canvas.height / gridSize) * gridSize;
+    shapes.push(new Shape(x, y, type));
+}
+
+function drawGrid() {
+    ctx.strokeStyle = '#ccc'; // Grid line color
+    ctx.lineWidth = 1; // Width of grid lines
+
+    // Vertical lines
+    for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+    }
+    
+    // Horizontal lines
+    for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+    }
 }
 
 function update() {
-    // Update bullets
-    player.bullets.forEach((bullet, index) => {
-        bullet.y -= bullet.speed;
-        if (bullet.y < 0) {
-            player.bullets.splice(index, 1);
-        }
-    });
-}
-
-function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawGrid();
 
-    // Draw player
-    ctx.fillStyle = player.color;
-    ctx.beginPath();
-    ctx.arc(player.x, player.y, player.size, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Draw bullets
-    player.bullets.forEach(bullet => {
-        ctx.fillStyle = 'red';
-        ctx.beginPath();
-        ctx.arc(bullet.x, bullet.y, bullet.radius, 0, Math.PI * 2);
-        ctx.fill();
+    shapes.forEach(shape => {
+        shape.update();
+        shape.draw();
     });
+
+    requestAnimationFrame(update);
 }
 
-function gameLoop() {
-    update();
-    draw();
-    requestAnimationFrame(gameLoop);
-}
-
-gameLoop();
+setInterval(spawnShape, 1000); // Spawn a new shape every second
+update();
