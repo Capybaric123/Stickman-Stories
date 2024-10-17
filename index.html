@@ -31,32 +31,24 @@
 
         function drawShapes() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawRandomSquares(10); // Draw 10 random yellow squares
-            drawRandomTriangles(10); // Draw 10 random red triangles
+            drawRandomRoundedSquares(10); // Draw 10 random yellow rounded squares
+            drawRandomRoundedTriangles(10); // Draw 10 random red rounded triangles
         }
 
-        function drawRandomSquares(count) {
+        function drawRandomRoundedSquares(count) {
             for (let i = 0; i < count; i++) {
                 const x = Math.random() * (canvas.width - 20); // Random x position
                 const y = Math.random() * (canvas.height - 20); // Random y position
-                drawSquare(x, y, 20, 'yellow', 'black'); // Draw yellow square
+                drawRoundedRect(x, y, 20, 'yellow', 'black'); // Draw yellow rounded square
             }
         }
 
-        function drawRandomTriangles(count) {
+        function drawRandomRoundedTriangles(count) {
             for (let i = 0; i < count; i++) {
                 const x = Math.random() * canvas.width; // Random x position
                 const y = Math.random() * canvas.height; // Random y position
-                drawTriangle(x, y, 20, 'red', 'black'); // Draw red triangle
+                drawRoundedTriangle(x, y, 20, 'red', 'black'); // Draw red rounded triangle
             }
-        }
-
-        function drawSquare(x, y, size, fillColor, strokeColor) {
-            ctx.fillStyle = fillColor;
-            ctx.fillRect(x, y, size, size); // Draw the square
-            ctx.strokeStyle = strokeColor;
-            ctx.lineWidth = 2;
-            ctx.strokeRect(x, y, size, size); // Draw the outline
         }
 
         function drawRoundedRect(x, y, size, fillColor, strokeColor) {
@@ -81,19 +73,22 @@
             ctx.stroke();
         }
 
-        function drawTriangle(x, y, size, fillColor, strokeColor) {
+        function drawRoundedTriangle(x, y, size, fillColor, strokeColor) {
             const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
+            const radius = size / 10; // Set radius for rounded edges
+
             ctx.beginPath();
             ctx.moveTo(x, y); // Top vertex
             ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
             ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
-            ctx.closePath();
             
+            // Round the edges
             ctx.lineJoin = 'round'; // Set the line join to round for smooth edges
-            
+            ctx.closePath();
+
             ctx.fillStyle = fillColor;
             ctx.fill();
-            
+
             ctx.strokeStyle = strokeColor;
             ctx.lineWidth = 2;
             ctx.stroke();
