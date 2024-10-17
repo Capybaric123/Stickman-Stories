@@ -19,74 +19,77 @@
 <body>
     <canvas id="ctx"></canvas>
 
-<script>
-  //functions
-  var canvas = document.getElementById("ctx");
-  var ctx = canvas.getContext("2d");
-
-  // Function to resize the canvas
-  function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      drawShapes(); // Redraw the shapes when resizing
-  }
-  
-  // Function to draw shapes
-  function drawShapes() {
-      // Clear the canvas before drawing
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw shapes with rounded corners
-      drawRoundedRect(50, 50, 20, 'red', 'black');   // Red rectangle
-      drawRoundedRect(200, 50, 20, 'green', 'black'); // Green rectangle
-      drawRoundedRect(125, 200, 20, 'blue', 'black');  // Blue rectangle
-      drawTriangle(350,350,20,'red','black'); // Red triangle
-  }
-  
-  ctx.globalAlpha = 1;
-
-
-  //create a rectangle with rounded edges
-    function drawRoundedRect(x, y, size, fillColor, strokeColor) {
-    const radius = size / 5; // Set radius relative to size
-        ctx.beginPath();
-        ctx.moveTo(x + radius, y);
-        ctx.lineTo(x + size - radius, y);
-        ctx.arcTo(x + size, y, x + size, y + radius, radius);
-        ctx.lineTo(x + size, y + size - radius);
-        ctx.arcTo(x + size, y + size, x + size - radius, y + size, radius);
-        ctx.lineTo(x + radius, y + size);
-        ctx.arcTo(x, y + size, x, y + size - radius, radius);
-        ctx.lineTo(x, y + radius);
-        ctx.arcTo(x, y, x + radius, y, radius);
-        ctx.closePath();
-            
-        ctx.fillStyle = fillColor;
-        ctx.fill();
-            
-        ctx.strokeStyle = strokeColor;
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    }
-
-    function drawTriangle(x, y, size, fillColor, strokeColor) {
-    const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
-        ctx.beginPath();
-        ctx.moveTo(x, y); // Top vertex
-        ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
-        ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
-        ctx.closePath();
-            
-        ctx.lineJoin = 'round'; // Set the line join to round for smooth edges
-            
-        ctx.fillStyle = fillColor;
-        ctx.fill();
-            
-        ctx.strokeStyle = strokeColor;
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    }
-  //script part
-  resizeCanvas();
-
-</script>
+    <script>
+        //functions
+        var canvas = document.getElementById("ctx");
+        var ctx = canvas.getContext("2d");
+    
+        // Function to resize the canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawShapes(); // Redraw the shapes when resizing
+        }
+          
+        // Function to draw shapes
+        function drawShapes() {
+            // Clear the canvas before drawing
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+            // Draw shapes with rounded corners
+            drawRoundedRect(50, 50, 20, 'red', 'black');   // Red rectangle
+            drawRoundedRect(200, 50, 20, 'green', 'black'); // Green rectangle
+            drawRoundedRect(125, 200, 20, 'blue', 'black');  // Blue rectangle
+            drawTriangle(350,350,20,'red','black'); // Red triangle
+        }
+          
+        ctx.globalAlpha = 1;
+        
+        
+        //create a rectangle with rounded edges
+        function drawRoundedRect(x, y, size, fillColor, strokeColor) {
+        const radius = size / 5; // Set radius relative to size
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + size - radius, y);
+            ctx.arcTo(x + size, y, x + size, y + radius, radius);
+            ctx.lineTo(x + size, y + size - radius);
+            ctx.arcTo(x + size, y + size, x + size - radius, y + size, radius);
+            ctx.lineTo(x + radius, y + size);
+            ctx.arcTo(x, y + size, x, y + size - radius, radius);
+            ctx.lineTo(x, y + radius);
+            ctx.arcTo(x, y, x + radius, y, radius);
+            ctx.closePath();
+                    
+            ctx.fillStyle = fillColor;
+            ctx.fill();
+                    
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+        
+        function drawTriangle(x, y, size, fillColor, strokeColor) {
+        const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
+                ctx.beginPath();
+                ctx.moveTo(x, y); // Top vertex
+                ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
+                ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
+                ctx.closePath();
+                    
+                ctx.lineJoin = 'round'; // Set the line join to round for smooth edges
+                    
+                ctx.fillStyle = fillColor;
+                ctx.fill();
+                    
+                ctx.strokeStyle = strokeColor;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+        }
+        //script part
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+    
+    </script>
+</body>
+</html>
