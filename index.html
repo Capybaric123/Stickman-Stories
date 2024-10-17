@@ -3,8 +3,23 @@
 <script>
   var ctx = document.getElementById("ctx").getContext("2d");
   
-  ctx.fillStyle = 'red';
   ctx.globalAlpha = 1;
-  
+
+
+  //first square (red)
+  ctx.fillStyle = 'red';
+  ctx.fillRect(50,50,100,100);
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(50,50,100,100);
+
+
+  //second square (green)
+  ctx.fillStyle = 'green';
+  ctx.fillRect(120,50,100,100);
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(120,50,100,100);
+
   ctx.fillRect(50,50,100,100);
 </script>
