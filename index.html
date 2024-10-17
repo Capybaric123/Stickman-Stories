@@ -70,13 +70,13 @@
     }
 
     function drawTriangle(x, y, size, fillColor, strokeColor) {
+    const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
         ctx.beginPath();
         ctx.moveTo(x, y); // Top vertex
-        ctx.lineTo(x - size, y + size * Math.sqrt(3) / 2); // Bottom-left vertex
-        ctx.lineTo(x + size, y + size * Math.sqrt(3) / 2); // Bottom-right vertex
+        ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
+        ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
         ctx.closePath();
             
-            // Smooth edges by using a smaller arc
         ctx.lineJoin = 'round'; // Set the line join to round for smooth edges
             
         ctx.fillStyle = fillColor;
