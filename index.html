@@ -40,6 +40,7 @@
       drawRoundedRect(50, 50, 100, 100, 20, 'red', 'black');   // Red rectangle
       drawRoundedRect(200, 50, 100, 100, 20, 'green', 'black'); // Green rectangle
       drawRoundedRect(125, 200, 100, 100, 20, 'blue', 'black');  // Blue rectangle
+      drawTriangle(350,350,100,100,20,'red','black'); // Red triangle
   }
   
   ctx.globalAlpha = 1;
@@ -66,6 +67,21 @@
     ctx.lineWidth = 2;
     ctx.stroke();
 }
+
+    function drawTriangle(x, y, size, fillColor, strokeColor) {
+        ctx.beginPath();
+        ctx.moveTo(x, y); // Top vertex
+        ctx.lineTo(x - size, y + size * Math.sqrt(3) / 2); // Bottom-left vertex
+        ctx.lineTo(x + size, y + size * Math.sqrt(3) / 2); // Bottom-right vertex
+        ctx.closePath();
+            
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+            
+        ctx.strokeStyle = strokeColor;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
   //script part
   resizeCanvas();
 
