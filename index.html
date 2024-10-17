@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Canvas</title>
+    <title>Responsive Canvas with Random Shapes</title>
     <style>
         body, html {
             margin: 0; /* Remove default margin */
@@ -20,18 +20,15 @@
     <canvas id="ctx"></canvas>
 
     <script>
-        //functions
         var canvas = document.getElementById("ctx");
         var ctx = canvas.getContext("2d");
-    
-        // Function to resize the canvas
+
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            drawShapes(); // Redraw the shapes when resizing
+            drawShapes();
         }
-          
-        // Function to draw shapes
+
         function drawShapes() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawRandomSquares(10); // Draw 10 random yellow squares
@@ -54,13 +51,16 @@
             }
         }
 
-        
-        ctx.globalAlpha = 1;
-        
-        
-        //create a rectangle with rounded edges
+        function drawSquare(x, y, size, fillColor, strokeColor) {
+            ctx.fillStyle = fillColor;
+            ctx.fillRect(x, y, size, size); // Draw the square
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = 2;
+            ctx.strokeRect(x, y, size, size); // Draw the outline
+        }
+
         function drawRoundedRect(x, y, size, fillColor, strokeColor) {
-        const radius = size / 5; // Set radius relative to size
+            const radius = size / 5; // Set radius relative to size
             ctx.beginPath();
             ctx.moveTo(x + radius, y);
             ctx.lineTo(x + size - radius, y);
@@ -72,36 +72,35 @@
             ctx.lineTo(x, y + radius);
             ctx.arcTo(x, y, x + radius, y, radius);
             ctx.closePath();
-                    
+            
             ctx.fillStyle = fillColor;
             ctx.fill();
-                    
+            
             ctx.strokeStyle = strokeColor;
             ctx.lineWidth = 2;
             ctx.stroke();
         }
-        
+
         function drawTriangle(x, y, size, fillColor, strokeColor) {
-        const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
-                ctx.beginPath();
-                ctx.moveTo(x, y); // Top vertex
-                ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
-                ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
-                ctx.closePath();
-                    
-                ctx.lineJoin = 'round'; // Set the line join to round for smooth edges
-                    
-                ctx.fillStyle = fillColor;
-                ctx.fill();
-                    
-                ctx.strokeStyle = strokeColor;
-                ctx.lineWidth = 2;
-                ctx.stroke();
+            const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
+            ctx.beginPath();
+            ctx.moveTo(x, y); // Top vertex
+            ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
+            ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
+            ctx.closePath();
+            
+            ctx.lineJoin = 'round'; // Set the line join to round for smooth edges
+            
+            ctx.fillStyle = fillColor;
+            ctx.fill();
+            
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = 2;
+            ctx.stroke();
         }
-        //script part
+
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
-    
     </script>
 </body>
 </html>
