@@ -31,7 +31,7 @@
             angle: 0,
             speed: 5,
             momentum: 0,
-            maxMomentum: 2,
+            maxMomentum: 4,
             bullets: []
         };
 
@@ -59,9 +59,9 @@
             ctx.fill();
             ctx.stroke();
 
-            // Draw the grey rectangle
+            // Draw the grey rectangle (barrel)
             ctx.fillStyle = 'grey';
-            ctx.fillRect(-5, -10, 10, 20); // Rectangle extending from player
+            ctx.fillRect(-2.5, -20, 5, 20); // Barrel extending from player
             ctx.restore();
 
             // Draw bullets
@@ -106,8 +106,8 @@
         window.addEventListener('mousedown', () => {
             const bulletSpeed = 10; // Speed of the bullet
             const bullet = {
-                x: player.x + Math.cos(player.angle) * 10, // Start position in front of the player
-                y: player.y + Math.sin(player.angle) * 10,
+                x: player.x + Math.cos(player.angle) * 25, // Start position in front of the player
+                y: player.y + Math.sin(player.angle) * 25,
                 vx: Math.cos(player.angle) * bulletSpeed,
                 vy: Math.sin(player.angle) * bulletSpeed
             };
@@ -116,17 +116,25 @@
 
         // Game loop
         function gameLoop() {
+            // Move forward
             if (keys['w']) {
                 player.momentum = Math.min(player.momentum + player.speed * 0.1, player.maxMomentum);
             }
+            // Move backward
             if (keys['s']) {
-                player.momentum = Math.max(player.momentum - player.speed * 0.1, -player.maxMomentum);
+                player.momentum = Math.min(player.momentum + player.speed * 0.1, player.maxMomentum);
             }
+            // Rotate left
             if (keys['a']) {
                 player.angle -= 0.05; // Rotate left
+                player.x -= Math.cos(player.angle) * 2; // Move left
+                player.y -= Math.sin(player.angle) * 2; // Move left
             }
+            // Rotate right
             if (keys['d']) {
                 player.angle += 0.05; // Rotate right
+                player.x += Math.cos(player.angle) * 2; // Move right
+                player.y += Math.sin(player.angle) * 2; // Move right
             }
 
             // Update bullets position
