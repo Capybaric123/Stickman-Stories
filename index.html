@@ -1,7 +1,26 @@
-<canvas id="ctx" width="500" height="500" style="border:1px solid #000000;"></canvas>
+<canvas id="ctx" style="border:1px solid #000000;"></canvas>
 
 <script>
-  var ctx = document.getElementById("ctx").getContext("2d");
+  var canvas = document.getElementById("ctx");
+  var ctx = canvas.getContext("2d");
+
+  // Function to resize the canvas
+  function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      drawShapes(); // Redraw the shapes when resizing
+  }
+  
+  // Function to draw shapes
+  function drawShapes() {
+      // Clear the canvas before drawing
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw shapes with rounded corners
+      drawRoundedRect(50, 50, 100, 100, 20, 'red', 'black');   // Red rectangle
+      drawRoundedRect(200, 50, 100, 100, 20, 'green', 'black'); // Green rectangle
+      drawRoundedRect(125, 200, 100, 100, 20, 'blue', 'black');  // Blue rectangle
+  }
   
   ctx.globalAlpha = 1;
 
@@ -28,7 +47,4 @@
     ctx.stroke();
 }
 
-  drawRoundedRect(50,50,100,100,20,'red','black');
-  drawRoundedRect(200,200,100,100,20,'green','grey');
-  
 </script>
