@@ -40,8 +40,8 @@
         for (let i = 0; i < 10; i++) {
             shapes.push({
                 type: Math.random() < 0.5 ? 'square' : 'triangle',
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
+                x: Math.random() * (canvas.width - 20) + 10, // Ensure shapes fit within canvas
+                y: Math.random() * (canvas.height - 20) + 10,
                 size: 20,
                 color: Math.random() < 0.5 ? 'yellow' : 'red'
             });
@@ -182,16 +182,17 @@
             // Move backward
             if (keys['s']) {
                 player.momentum = Math.min(player.momentum + player.speed * 0.1, player.maxMomentum);
+                player.momentum *= -1; // Reverse the direction
             }
             // Move left (without rotating)
             if (keys['a']) {
-                player.x -= Math.cos(player.angle + Math.PI / 2) * player.speed * 0.1; // Move left
-                player.y -= Math.sin(player.angle + Math.PI / 2) * player.speed * 0.1; // Move left
+                player.x -= Math.cos(player.angle + Math.PI / 2) * player.speed; // Move left
+                player.y -= Math.sin(player.angle + Math.PI / 2) * player.speed; // Move left
             }
             // Move right (without rotating)
             if (keys['d']) {
-                player.x += Math.cos(player.angle + Math.PI / 2) * player.speed * 0.1; // Move right
-                player.y += Math.sin(player.angle + Math.PI / 2) * player.speed * 0.1; // Move right
+                player.x += Math.cos(player.angle + Math.PI / 2) * player.speed; // Move right
+                player.y += Math.sin(player.angle + Math.PI / 2) * player.speed; // Move right
             }
 
             // Update bullets position
