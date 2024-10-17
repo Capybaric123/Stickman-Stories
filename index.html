@@ -1,4 +1,23 @@
-<canvas id="ctx" style="border:1px solid #000000;"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Canvas</title>
+    <style>
+        body, html {
+            margin: 0; /* Remove default margin */
+            overflow: hidden; /* Prevent scrolling */
+        }
+        canvas {
+            display: block; /* Prevent extra space below the canvas */
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="ctx"></canvas>
 
 <script>
   //functions
