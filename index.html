@@ -33,16 +33,28 @@
           
         // Function to draw shapes
         function drawShapes() {
-            // Clear the canvas before drawing
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-            // Draw shapes with rounded corners
-            drawRoundedRect(50, 50, 20, 'red', 'black');   // Red rectangle
-            drawRoundedRect(200, 50, 20, 'green', 'black'); // Green rectangle
-            drawRoundedRect(125, 200, 20, 'blue', 'black');  // Blue rectangle
-            drawTriangle(350,350,20,'red','black'); // Red triangle
+            drawRandomSquares(10); // Draw 10 random yellow squares
+            drawRandomTriangles(10); // Draw 10 random red triangles
         }
-          
+
+        function drawRandomSquares(count) {
+            for (let i = 0; i < count; i++) {
+                const x = Math.random() * (canvas.width - 20); // Random x position
+                const y = Math.random() * (canvas.height - 20); // Random y position
+                drawSquare(x, y, 20, 'yellow', 'black'); // Draw yellow square
+            }
+        }
+
+        function drawRandomTriangles(count) {
+            for (let i = 0; i < count; i++) {
+                const x = Math.random() * canvas.width; // Random x position
+                const y = Math.random() * canvas.height; // Random y position
+                drawTriangle(x, y, 20, 'red', 'black'); // Draw red triangle
+            }
+        }
+
+        
         ctx.globalAlpha = 1;
         
         
