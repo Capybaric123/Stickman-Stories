@@ -6,19 +6,29 @@
   ctx.globalAlpha = 1;
 
 
-  //first square (red)
-  ctx.fillStyle = 'red';
-  ctx.fillRect(50,50,100,100);
-  ctx.strokeStyle = 'black';
-  ctx.lineWidth = 2;
-  ctx.strokeRect(50,50,100,100);
+  //create a rectangle with rounded edges
+  function drawRoundedRect(x, y, width, height, radius, fillColor, strokeColor) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y); // Start at the top-left corner
+    ctx.lineTo(x + width - radius, y); // Top edge
+    ctx.arcTo(x + width, y, x + width, y + radius, radius); // Top-right corner
+    ctx.lineTo(x + width, y + height - radius); // Right edge
+    ctx.arcTo(x + width, y + height, x + width - radius, y + height, radius); // Bottom-right corner
+    ctx.lineTo(x + radius, y + height); // Bottom edge
+    ctx.arcTo(x, y + height, x, y + height - radius, radius); // Bottom-left corner
+    ctx.lineTo(x, y + radius); // Left edge
+    ctx.arcTo(x, y, x + radius, y, radius); // Top-left corner
+    ctx.closePath();
+    
+    ctx.fillStyle = fillColor;
+    ctx.fill();
+    
+    ctx.strokeStyle = strokeColor;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+}
 
-
-  //second square (green)
-  ctx.fillStyle = 'green';
-  ctx.fillRect(200,200,100,100);
-  ctx.strokeStyle = 'black';
-  ctx.lineWidth = 2;
-  ctx.strokeRect(200,200,100,100);
-
+  drawRoundedRect(50,50,100,100,20,'red','black');
+  drawRoundedRect(200,200,100,100,20,'green','grey');
+  
 </script>
