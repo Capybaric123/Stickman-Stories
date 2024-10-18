@@ -55,7 +55,7 @@
             mouseY = e.clientY - rect.top;
 
             // Calculate the angle to the mouse position
-            let angle = Math.atan2(mouseY - player.y, mouseX - player.x);
+            player.angle = Math.atan2(mouseY - player.y, mouseX - player.x);
         });
 
         function updatePlayer() {
@@ -68,7 +68,7 @@
         function drawPlayer() {
             ctx.save();
             ctx.translate(player.x, player.y);
-            ctx.rotate(angle);
+            ctx.rotate(player.angle);
 
             // Draw player outline
             ctx.strokeStyle = '#005f7f'; // Darker color for outline
