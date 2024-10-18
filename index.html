@@ -83,12 +83,25 @@
             ctx.arc(0, 0, player.radius, 0, Math.PI * 2);
             ctx.fill();
 
-            // Draw rectangle to represent the front
+            // Draw rectangle to represent the tail
             ctx.fillStyle = '#808080'; // Grey color for rectangle
             ctx.strokeStyle = '#4b4b4b'; // Darker color for outline
             ctx.lineWidth = 4;
+
+            // Create rounded rectangle for tail
+            const tailWidth = 8; // Width of the tail
+            const tailLength = 40; // Length of the tail
+
             ctx.beginPath();
-            ctx.rect(-5, -player.radius - 4, 10, 8); // Rectangle in front of the player
+            ctx.moveTo(-tailWidth / 2, -player.radius); // Start at the top of the circle
+            ctx.lineTo(tailWidth / 2, -player.radius); // Move to the right edge of the tail
+            ctx.lineTo(tailWidth / 2, -player.radius - tailLength + 5); // Move down to the edge
+            ctx.quadraticCurveTo(tailWidth / 2 + 5, -player.radius - tailLength, tailWidth / 2, -player.radius - tailLength); // Round edge
+            ctx.lineTo(-tailWidth / 2, -player.radius - tailLength); // Move left edge down
+            ctx.quadraticCurveTo(-tailWidth / 2 - 5, -player.radius - tailLength, -tailWidth / 2, -player.radius - tailLength + 5); // Round edge
+            ctx.lineTo(-tailWidth / 2, -player.radius); // Close back to top
+            ctx.closePath();
+
             ctx.fill();
             ctx.stroke();
 
