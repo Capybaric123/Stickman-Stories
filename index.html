@@ -142,19 +142,19 @@ class GameScene extends Phaser.Scene {
 
         // Create a grid
         const gridSize = 50;
-        for (let x = 0; x < 2000; x += gridSize) {
-            this.add.line(0, 0, x, 0, x, 2000, 0xcccccc).setOrigin(0);
+        for (let x = 0; x < 20000; x += gridSize) {
+            this.add.line(0, 0, x, 0, x, 20000, 0xcccccc).setOrigin(0);
         }
-        for (let y = 0; y < 2000; y += gridSize) {
-            this.add.line(0, 0, 0, y, 2000, y, 0xcccccc).setOrigin(0);
+        for (let y = 0; y < 20000; y += gridSize) {
+            this.add.line(0, 0, 0, y, 20000, y, 0xcccccc).setOrigin(0);
         }
     }
 
     spawnEnemies(count) {
         for (let i = 0; i < count; i++) {
             const type = Phaser.Utils.Array.GetRandom(['square', 'triangle', 'hexagon']);
-            const x = Phaser.Math.Between(100, 1900);
-            const y = Phaser.Math.Between(100, 1900);
+            const x = Phaser.Math.Between(100, 19000);
+            const y = Phaser.Math.Between(100, 19000);
             this.enemies.add(new Enemy(this, x, y, type).sprite);
         }
     }
