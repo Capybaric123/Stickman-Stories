@@ -2,56 +2,95 @@
 <html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>
+    <style>
+        body { margin: 0; }
+    </style>
 </head>
 <body>
 
-    <script>
-    class Example extends Phaser.Scene
-    {
-        preload ()
-        {
-            this.load.setBaseURL('https://labs.phaser.io');
-
-            this.load.image('sky', 'assets/skies/space3.png');
-            this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-            this.load.image('red', 'assets/particles/red.png');
-        }
-
-        create ()
-        {
-            this.add.image(400, 300, 'sky');
-
-            const particles = this.add.particles(0, 0, 'red', {
-                speed: 100,
-                scale: { start: 1, end: 0 },
-                blendMode: 'ADD'
-            });
-
-            const logo = this.physics.add.image(400, 100, 'logo');
-
-            logo.setVelocity(100, 200);
-            logo.setBounce(1, 1);
-            logo.setCollideWorldBounds(true);
-
-            particles.startFollow(logo);
-        }
+<script>
+class Player {
+    constructor(scene) {
+        this.scene = scene;
+        this.sprite = scene.physics.add.image(400, 300, 'tank');
+        this.sprite.setCollideWorldBounds(true);
+        this.speed = 200;
+        this.cursors = scene.input.keyboard.createCursorKeys();
     }
 
-    const config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        scene: Example,
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 200 }
-            }
+    update() {
+        if (this.cursors.left.isDown) {
+            this.sprite.setAngularVelocity(-this.speed);
+        } else if (this.cursors.right.isDown) {
+            this.sprite.setAngularVelocity(this.speed);
+        } else {
+            this.sprite.setAngularVelocity(0);
         }
-    };
 
-    const game = new Phaser.Game(config);
-    </script>
+        if (this.cursors.up.isDown) {
+            this.scene.physics.velocityFromRotation(this.sprite.rotation, this.speed, this.sprite.body.velocity);
+        } else {
+            this.sprite.setVelocity(0);
+        }
+    }
+}
+
+class Enemy {
+    constructor(scene, x, y) {
+        this.scene = scene;
+        this.sprite = scene.physics.add.image(x, y, 'enemy');
+        this.sprite.setVelocity(Phaser.Math.Between(-50, 50), Phaser.Math.Between(-50, 50));
+        this.sprite.setCollideWorldBounds(true);
+        this.sprite.setBounce(1);
+    }
+}
+
+class GameScene extends Phaser.Scene {
+    preload() {
+        this.load.image('tank', 'assets/sprites/tank.png'); // Placeholder for tank sprite
+        this.load.image('enemy', 'assets/sprites/enemy.png'); // Placeholder for enemy sprite
+        this.load.image('sky', 'assets/skies/space3.png');
+    }
+
+    create() {
+        this.add.image(400, 300, 'sky');
+        
+        this.player = new Player(this);
+        
+        this.enemies = this.physics.add.group();
+        for (let i = 0; i < 5; i++) {
+            new Enemy(this, Phaser.Math.Between(100, 700), Phaser.Math.Between(100, 500));
+        }
+
+        this.physics.add.collider(this.player.sprite, this.enemies, this.hitEnemy, null, this);
+    }
+
+    update() {
+        this.player.update();
+    }
+
+    hitEnemy(player, enemy) {
+        // Handle player collision with enemy
+        console.log('Hit!');
+        enemy.setVelocity(Phaser.Math.Between(-50, 50), Phaser.Math.Between(-50, 50));
+    }
+}
+
+const config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    scene: GameScene,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 0 }
+        }
+    }
+};
+
+const game = new Phaser.Game(config);
+</script>
 
 </body>
 </html>
