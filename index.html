@@ -95,10 +95,10 @@
             ctx.beginPath();
             ctx.moveTo(-tailWidth / 2, -player.radius); // Start at the top of the circle
             ctx.lineTo(tailWidth / 2, -player.radius); // Move to the right edge of the tail
-            ctx.lineTo(tailWidth / 2, -player.radius - tailLength + 5); // Move down to the edge
-            ctx.quadraticCurveTo(tailWidth / 2 + 5, -player.radius - tailLength, tailWidth / 2, -player.radius - tailLength); // Round edge
-            ctx.lineTo(-tailWidth / 2, -player.radius - tailLength); // Move left edge down
-            ctx.quadraticCurveTo(-tailWidth / 2 - 5, -player.radius - tailLength, -tailWidth / 2, -player.radius - tailLength + 5); // Round edge
+            ctx.lineTo(tailWidth / 2, -player.radius - tailLength); // Move down to the end of the tail
+            ctx.quadraticCurveTo(tailWidth / 2 + 5, -player.radius - tailLength, tailWidth / 2, -player.radius - tailLength + 5); // Round edge
+            ctx.lineTo(-tailWidth / 2, -player.radius - tailLength + 5); // Move left edge down
+            ctx.quadraticCurveTo(-tailWidth / 2 - 5, -player.radius - tailLength, -tailWidth / 2, -player.radius - tailLength); // Round edge
             ctx.lineTo(-tailWidth / 2, -player.radius); // Close back to top
             ctx.closePath();
 
