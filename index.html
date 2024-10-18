@@ -1,214 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Movement and Shooting</title>
-    <style>
-        body, html {
-            margin: 0; /* Remove default margin */
-            overflow: hidden; /* Prevent scrolling */
-        }
-        canvas {
-            display: block; /* Prevent extra space below the canvas */
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser-arcade-physics.min.js"></script>
 </head>
 <body>
-    <canvas id="ctx"></canvas>
 
     <script>
-        var canvas = document.getElementById("ctx");
-        var ctx = canvas.getContext("2d");
+    class Example extends Phaser.Scene
+    {
+        preload ()
+        {
+            this.load.setBaseURL('https://labs.phaser.io');
 
-        // Player settings
-        var player = {
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            radius: 20,
-            angle: 0,
-            speed: 5,
-            momentum: 0,
-            maxMomentum: 4,
-            bullets: []
-        };
-
-        // Shape settings
-        var shapes = [];
-        for (let i = 0; i < 10; i++) {
-            shapes.push({
-                type: Math.random() < 0.5 ? 'square' : 'triangle',
-                x: Math.random() * (canvas.width - 20) + 10, // Ensure shapes fit within canvas
-                y: Math.random() * (canvas.height - 20) + 10,
-                size: 20,
-                color: Math.random() < 0.5 ? 'yellow' : 'red'
-            });
+            this.load.image('sky', 'assets/skies/space3.png');
+            this.load.image('logo', 'assets/sprites/phaser3-logo.png');
+            this.load.image('red', 'assets/particles/red.png');
         }
 
-        // Update the canvas size
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+        create ()
+        {
+            this.add.image(400, 300, 'sky');
 
-        // Draw the player, bullets, and shapes
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Draw player
-            ctx.save();
-            ctx.translate(player.x, player.y);
-            ctx.rotate(player.angle);
-            ctx.fillStyle = 'lightblue';
-            ctx.strokeStyle = 'grey';
-            ctx.lineWidth = 2;
-
-            // Draw player body (circle)
-            ctx.beginPath();
-            ctx.arc(0, 0, player.radius, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.stroke();
-
-            // Draw the grey rectangle (barrel)
-            ctx.fillStyle = 'grey';
-            ctx.fillRect(-2.5, -20, 5, 20); // Barrel extending from player
-            ctx.restore();
-
-            // Draw bullets
-            player.bullets.forEach(bullet => {
-                ctx.fillStyle = 'blue';
-                ctx.beginPath();
-                ctx.arc(bullet.x, bullet.y, 5, 0, Math.PI * 2);
-                ctx.fill();
+            const particles = this.add.particles(0, 0, 'red', {
+                speed: 100,
+                scale: { start: 1, end: 0 },
+                blendMode: 'ADD'
             });
 
-            // Draw random shapes
-            shapes.forEach(shape => {
-                if (shape.type === 'square') {
-                    drawRoundedRect(shape.x, shape.y, shape.size, shape.color, 'black');
-                } else if (shape.type === 'triangle') {
-                    drawRoundedTriangle(shape.x, shape.y, shape.size, shape.color, 'black');
-                }
-            });
+            const logo = this.physics.add.image(400, 100, 'logo');
+
+            logo.setVelocity(100, 200);
+            logo.setBounce(1, 1);
+            logo.setCollideWorldBounds(true);
+
+            particles.startFollow(logo);
         }
+    }
 
-        function drawRoundedRect(x, y, size, fillColor, strokeColor) {
-            const radius = size / 5; // Set radius relative to size
-            ctx.beginPath();
-            ctx.moveTo(x + radius, y);
-            ctx.lineTo(x + size - radius, y);
-            ctx.arcTo(x + size, y, x + size, y + radius, radius);
-            ctx.lineTo(x + size, y + size - radius);
-            ctx.arcTo(x + size, y + size, x + size - radius, y + size, radius);
-            ctx.lineTo(x + radius, y + size);
-            ctx.arcTo(x, y + size, x, y + size - radius, radius);
-            ctx.lineTo(x, y + radius);
-            ctx.arcTo(x, y, x + radius, y, radius);
-            ctx.closePath();
-
-            ctx.fillStyle = fillColor;
-            ctx.fill();
-
-            ctx.strokeStyle = strokeColor;
-            ctx.lineWidth = 2;
-            ctx.stroke();
+    const config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        scene: Example,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 200 }
+            }
         }
+    };
 
-        function drawRoundedTriangle(x, y, size, fillColor, strokeColor) {
-            const height = (Math.sqrt(3) / 2) * size; // Height of the equilateral triangle
-            ctx.beginPath();
-            ctx.moveTo(x, y); // Top vertex
-            ctx.lineTo(x - size / 2, y + height); // Bottom-left vertex
-            ctx.lineTo(x + size / 2, y + height); // Bottom-right vertex
-            ctx.closePath();
-
-            ctx.fillStyle = fillColor;
-            ctx.fill();
-
-            ctx.strokeStyle = strokeColor;
-            ctx.lineWidth = 2;
-            ctx.stroke();
-        }
-
-        // Update the player's position and momentum
-        function update() {
-            // Update position based on momentum
-            player.x += Math.cos(player.angle) * player.momentum;
-            player.y += Math.sin(player.angle) * player.momentum;
-
-            // Reduce momentum gradually for gliding effect
-            if (player.momentum > 0) {
-                player.momentum -= 0.1; // Adjust for smoother or sharper deceleration
-            }
-            if (player.momentum < 0) player.momentum = 0;
-        }
-
-        // Handle key presses
-        var keys = {};
-        window.addEventListener('keydown', (e) => {
-            keys[e.key] = true;
-        });
-        window.addEventListener('keyup', (e) => {
-            keys[e.key] = false;
-        });
-
-        // Handle mouse movement
-        window.addEventListener('mousemove', (e) => {
-            const dx = e.clientX - player.x;
-            const dy = e.clientY - player.y;
-            player.angle = Math.atan2(dy, dx);
-        });
-
-        // Handle shooting bullets
-        window.addEventListener('mousedown', () => {
-            const bulletSpeed = 10; // Speed of the bullet
-            const bullet = {
-                x: player.x + Math.cos(player.angle) * 25, // Start position in front of the player
-                y: player.y + Math.sin(player.angle) * 25,
-                vx: Math.cos(player.angle) * bulletSpeed,
-                vy: Math.sin(player.angle) * bulletSpeed
-            };
-            player.bullets.push(bullet);
-        });
-
-        // Game loop
-        function gameLoop() {
-            // Move forward
-            if (keys['w']) {
-                player.momentum = Math.min(player.momentum + player.speed * 0.1, player.maxMomentum);
-            }
-            // Move backward
-            if (keys['s']) {
-                player.momentum = Math.min(player.momentum + player.speed * 0.1, player.maxMomentum);
-                player.momentum *= -1; // Reverse the direction
-            }
-            // Move left (without rotating)
-            if (keys['a']) {
-                player.x -= Math.cos(player.angle + Math.PI / 2) * player.speed; // Move left
-                player.y -= Math.sin(player.angle + Math.PI / 2) * player.speed; // Move left
-            }
-            // Move right (without rotating)
-            if (keys['d']) {
-                player.x += Math.cos(player.angle + Math.PI / 2) * player.speed; // Move right
-                player.y += Math.sin(player.angle + Math.PI / 2) * player.speed; // Move right
-            }
-
-            // Update bullets position
-            player.bullets.forEach(bullet => {
-                bullet.x += bullet.vx;
-                bullet.y += bullet.vy;
-            });
-
-            draw();
-            update();
-            requestAnimationFrame(gameLoop);
-        }
-
-        resizeCanvas();
-        gameLoop();
-        window.addEventListener('resize', resizeCanvas);
+    const game = new Phaser.Game(config);
     </script>
+
 </body>
 </html>
