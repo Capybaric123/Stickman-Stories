@@ -128,8 +128,12 @@ class GameScene extends Phaser.Scene {
         this.physics.add.collider(this.player.bullets, this.enemies, this.bulletHitEnemy, null, this);
         this.physics.add.collider(this.player.sprite, this.enemies, this.hitEnemy, null, this);
         
+        // Set world bounds to allow full movement
+        this.physics.world.setBounds(0, 0, 2000, 2000);
+        
         // Camera follows player
         this.cameras.main.startFollow(this.player.sprite);
+        this.cameras.main.setBounds(0, 0, 2000, 2000); // Set camera bounds to match the world
     }
 
     update() {
@@ -138,23 +142,23 @@ class GameScene extends Phaser.Scene {
 
     createBackground() {
         // Create a white background
-        this.add.rectangle(0, 0, 20000, 20000, 0xffffff).setOrigin(0); // Larger background
+        this.add.rectangle(0, 0, 2000, 2000, 0xffffff).setOrigin(0); // Larger background
 
         // Create a grid
         const gridSize = 50;
-        for (let x = 0; x < 20000; x += gridSize) {
-            this.add.line(0, 0, x, 0, x, 20000, 0xcccccc).setOrigin(0);
+        for (let x = 0; x < 2000; x += gridSize) {
+            this.add.line(0, 0, x, 0, x, 2000, 0xcccccc).setOrigin(0);
         }
-        for (let y = 0; y < 20000; y += gridSize) {
-            this.add.line(0, 0, 0, y, 20000, y, 0xcccccc).setOrigin(0);
+        for (let y = 0; y < 2000; y += gridSize) {
+            this.add.line(0, 0, 0, y, 2000, y, 0xcccccc).setOrigin(0);
         }
     }
 
     spawnEnemies(count) {
         for (let i = 0; i < count; i++) {
             const type = Phaser.Utils.Array.GetRandom(['square', 'triangle', 'hexagon']);
-            const x = Phaser.Math.Between(100, 19000);
-            const y = Phaser.Math.Between(100, 19000);
+            const x = Phaser.Math.Between(100, 1900);
+            const y = Phaser.Math.Between(100, 1900);
             this.enemies.add(new Enemy(this, x, y, type).sprite);
         }
     }
