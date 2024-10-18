@@ -83,6 +83,15 @@
             ctx.arc(0, 0, player.radius, 0, Math.PI * 2);
             ctx.fill();
 
+            // Draw rectangle to represent the front
+            ctx.fillStyle = '#808080'; // Grey color for rectangle
+            ctx.strokeStyle = '#4b4b4b'; // Darker color for outline
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.rect(-5, -player.radius - 4, 10, 8); // Rectangle in front of the player
+            ctx.fill();
+            ctx.stroke();
+
             ctx.restore();
         }
 
