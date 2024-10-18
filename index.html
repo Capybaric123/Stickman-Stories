@@ -15,7 +15,14 @@ class Player {
         this.sprite = scene.physics.add.image(400, 300, 'tank');
         this.sprite.setCollideWorldBounds(true);
         this.speed = 200;
+        this.health = 100;
         this.cursors = scene.input.keyboard.createCursorKeys();
+        this.bullets = scene.physics.add.group({
+            defaultKey: 'bullet',
+            maxSize: 10
+        });
+
+        scene.input.keyboard.on('keydown-SPACE', () => this.shoot());
     }
 
     update() {
@@ -33,22 +40,59 @@ class Player {
             this.sprite.setVelocity(0);
         }
     }
+
+    shoot() {
+        if (this.bullets.getLength() < this.bullets.maxSize) {
+            const bullet = this.bullets.get(this.sprite.x, this.sprite.y);
+            if (bullet) {
+                bullet.setActive(true);
+                bullet.setVisible(true);
+                bullet.setRotation(this.sprite.rotation);
+                this.scene.physics.velocityFromRotation(this.sprite.rotation, 400, bullet.body.velocity);
+                bullet.setCollideWorldBounds(true);
+                bullet.setLifeSpan(2000); // Auto destroy after 2 seconds
+            }
+        }
+    }
 }
 
 class Enemy {
-    constructor(scene, x, y) {
+    constructor(scene, x, y, type) {
         this.scene = scene;
-        this.sprite = scene.physics.add.image(x, y, 'enemy');
+        this.sprite = scene.physics.add.image(x, y, type);
         this.sprite.setVelocity(Phaser.Math.Between(-50, 50), Phaser.Math.Between(-50, 50));
         this.sprite.setCollideWorldBounds(true);
         this.sprite.setBounce(1);
+        this.health = 50; // Each enemy has its own health
+
+        // Set a random direction
+        this.moveRandomly();
+    }
+
+    moveRandomly() {
+        this.sprite.setVelocity(Phaser.Math.Between(-50, 50), Phaser.Math.Between(-50, 50));
+    }
+
+    takeDamage(amount) {
+        this.health -= amount;
+        if (this.health <= 0) {
+            this.sprite.destroy();
+            return true; // Enemy destroyed
+        }
+        return false; // Enemy still alive
     }
 }
 
 class GameScene extends Phaser.Scene {
+    constructor() {
+        super({ key: 'GameScene' });
+        this.score = 0;
+    }
+
     preload() {
         this.load.image('tank', 'assets/sprites/tank.png'); // Placeholder for tank sprite
         this.load.image('enemy', 'assets/sprites/enemy.png'); // Placeholder for enemy sprite
+        this.load.image('bullet', 'assets/sprites/bullet.png'); // Placeholder for bullet sprite
         this.load.image('sky', 'assets/skies/space3.png');
     }
 
@@ -59,20 +103,49 @@ class GameScene extends Phaser.Scene {
         
         this.enemies = this.physics.add.group();
         for (let i = 0; i < 5; i++) {
-            new Enemy(this, Phaser.Math.Between(100, 700), Phaser.Math.Between(100, 500));
+            this.enemies.add(new Enemy(this, Phaser.Math.Between(100, 700), Phaser.Math.Between(100, 500), 'enemy').sprite);
         }
 
+        this.physics.add.collider(this.player.bullets, this.enemies, this.bulletHitEnemy, null, this);
         this.physics.add.collider(this.player.sprite, this.enemies, this.hitEnemy, null, this);
     }
 
     update() {
         this.player.update();
+        this.player.bullets.children.each((bullet) => {
+            if (bullet.active) {
+                bullet.body.position.x += Math.cos(bullet.rotation) * 10; // Move the bullet
+                bullet.body.position.y += Math.sin(bullet.rotation) * 10; // Move the bullet
+
+                // Check if bullet is out of bounds
+                if (bullet.body.position.x < 0 || bullet.body.position.x > 800 || 
+                    bullet.body.position.y < 0 || bullet.body.position.y > 600) {
+                    bullet.setActive(false);
+                    bullet.setVisible(false);
+                }
+            }
+        });
+    }
+
+    bulletHitEnemy(bullet, enemy) {
+        bullet.setActive(false);
+        bullet.setVisible(false);
+        
+        if (enemy.takeDamage(20)) { // Each bullet does 20 damage
+            this.score += 10; // Increase score for destroying enemy
+            console.log('Score:', this.score);
+        }
     }
 
     hitEnemy(player, enemy) {
         // Handle player collision with enemy
-        console.log('Hit!');
-        enemy.setVelocity(Phaser.Math.Between(-50, 50), Phaser.Math.Between(-50, 50));
+        player.health -= 10; // Reduce player health
+        console.log('Player Health:', player.health);
+        
+        if (player.health <= 0) {
+            console.log('Game Over');
+            this.scene.pause(); // Stop the game
+        }
     }
 }
 
