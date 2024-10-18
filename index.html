@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diep.io 2</title>
+    <title>Auto-Fit Canvas Game</title>
     <style>
         body {
             margin: 0;
@@ -24,7 +24,8 @@
             x: canvas.width / 2,
             y: canvas.height / 2,
             radius: 20,
-            speed: 2
+            speed: 2,
+            angle: 0 // To hold the current angle of the player
         };
 
         function resizeCanvas() {
@@ -52,6 +53,9 @@
             const rect = canvas.getBoundingClientRect();
             mouseX = e.clientX - rect.left;
             mouseY = e.clientY - rect.top;
+
+            // Calculate the angle to the mouse position
+            player.angle = Math.atan2(mouseY - player.y, mouseX - player.x);
         });
 
         function updatePlayer() {
@@ -62,10 +66,9 @@
         }
 
         function drawPlayer() {
-            const angle = Math.atan2(mouseY - player.y, mouseX - player.x);
             ctx.save();
             ctx.translate(player.x, player.y);
-            ctx.rotate(angle);
+            ctx.rotate(player.angle);
 
             // Draw player outline
             ctx.strokeStyle = '#005f7f'; // Darker color for outline
