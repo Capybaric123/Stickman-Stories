@@ -3,119 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto-Fit Canvas Game</title>
+    <title>Your Comic Book Title</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             margin: 0;
-            overflow: hidden; /* Prevent scrolling */
+            padding: 20px;
         }
-        canvas {
-            display: block; /* Remove extra space below canvas */
+        header {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .comic {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
 
-        const player = {
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            radius: 20,
-            speed: 2,
-            angle: 0 // To hold the current angle of the player
-        };
+<header>
+    <h1>Your Comic Book Title</h1>
+</header>
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            player.x = canvas.width / 2; // Center player on resize
-            player.y = canvas.height / 2;
-        }
+<nav>
+    <a href="index.html">Home</a>
+    <a href="comic1.html">Comic 1</a>
+    <a href="comic2.html">Comic 2</a>
+    <a href="comic3.html">Comic 3</a>
+    <!-- Add more links as you create new comic pages -->
+</nav>
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas(); // Initial resize
+<div class="comic">
+    <h2>Latest Comic</h2>
+    <p>Welcome to my comic book site! Check out my latest comics using the links above.</p>
+</div>
 
-        const keys = {};
-        window.addEventListener('keydown', (e) => {
-            keys[e.key] = true;
-        });
-        window.addEventListener('keyup', (e) => {
-            keys[e.key] = false;
-        });
-
-        let mouseX = canvas.width / 2;
-        let mouseY = canvas.height / 2;
-
-        canvas.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
-
-            // Calculate the angle to the mouse position
-            player.angle = Math.atan2(mouseY - player.y, mouseX - player.x);
-        });
-
-        function updatePlayer() {
-            if (keys['w']) player.y -= player.speed;
-            if (keys['s']) player.y += player.speed;
-            if (keys['a']) player.x -= player.speed;
-            if (keys['d']) player.x += player.speed;
-        }
-
-        function drawPlayer() {
-            ctx.save();
-            ctx.translate(player.x, player.y);
-            ctx.rotate(player.angle);
-
-            // Draw player outline
-            ctx.strokeStyle = '#005f7f'; // Darker color for outline
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.arc(0, 0, player.radius, 0, Math.PI * 2);
-            ctx.stroke();
-
-            // Draw player body
-            ctx.fillStyle = '#66b3e3'; // Light blue color
-            ctx.beginPath();
-            ctx.arc(0, 0, player.radius, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Draw rectangle to represent the tail
-            ctx.fillStyle = '#808080'; // Grey color for rectangle
-            ctx.strokeStyle = '#4b4b4b'; // Darker color for outline
-            ctx.lineWidth = 4;
-
-            // Create rounded rectangle for tail
-            const tailWidth = 8; // Width of the tail
-            const tailLength = 40; // Length of the tail
-
-            ctx.beginPath();
-            ctx.moveTo(-tailWidth / 2, -player.radius); // Start at the top of the circle
-            ctx.lineTo(tailWidth / 2, -player.radius); // Move to the right edge of the tail
-            ctx.lineTo(tailWidth / 2, -player.radius - tailLength); // Move down to the end of the tail
-            ctx.quadraticCurveTo(tailWidth / 2 + 5, -player.radius - tailLength, tailWidth / 2, -player.radius - tailLength + 5); // Round edge
-            ctx.lineTo(-tailWidth / 2, -player.radius - tailLength + 5); // Move left edge down
-            ctx.quadraticCurveTo(-tailWidth / 2 - 5, -player.radius - tailLength, -tailWidth / 2, -player.radius - tailLength); // Round edge
-            ctx.lineTo(-tailWidth / 2, -player.radius); // Close back to top
-            ctx.closePath();
-
-            ctx.fill();
-            ctx.stroke();
-
-            ctx.restore();
-        }
-
-        function gameLoop() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            updatePlayer();
-            drawPlayer();
-            requestAnimationFrame(gameLoop);
-        }
-
-        gameLoop(); // Start the game loop
-    </script>
 </body>
 </html>
