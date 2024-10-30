@@ -1,3 +1,12 @@
-This is a simple clone if diep.io which I crafted in a few days.
-Don't forget that I am just a newbie in js and html so there might be some issues.
-Also about issues, there is issues tab in every repositorie on github, if you find any bugs in the code, then report them and I'll fix it as soon as possible !
+This is a site made for my own webcomic.
+The site is made using HTML and CSS. While there is JavaScript it's very simple.
+I will probably create something like a wiki page or a discussion for you guys to 
+chat in there and give me ideas for new parts of the comic. I hope everyone likes 
+the comic.
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Also if you want to use this as a base for your own site I would be very happy to explain
+if you need help with it.
+
+Here is my email for these cases: dancho321sorokin@gmail.com
