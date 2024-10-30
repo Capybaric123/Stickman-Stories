@@ -6,51 +6,58 @@
     <title>Chicken Stories</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: #e0e0e0;
             margin: 0;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            color: #333;
         }
         header {
-            background: #333;
-            color: white;
-            padding: 10px 0;
+            background: #ffcc00;
+            color: #000;
+            padding: 15px;
             text-align: center;
+            border: 2px solid #000;
+            margin-bottom: 20px;
         }
         .comic {
-            background: white;
-            padding: 15px;
+            background: #fff;
+            padding: 20px;
             margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #000;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         .comic-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: auto; /* Pushes the list to the bottom */
+            margin-top: 20px;
         }
         .comic-list a {
-            margin: 5px 15px;
-            padding: 10px 20px;
-            background: #333;
-            color: white;
+            margin: 5px;
+            padding: 10px 15px;
+            background: #ff6600;
+            color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border: 1px solid #000;
             transition: background 0.3s;
+            border-radius: 5px;
         }
         .comic-list a:hover {
-            background: #555;
+            background: #ff9900;
+        }
+        footer {
+            text-align: center;
+            margin-top: auto;
+            font-size: 12px;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Chicken Stories</h1>
+    <h1>Chicken stories</h1>
 </header>
 
 <div class="comic">
@@ -64,6 +71,10 @@
     <a href="comic3.html">Comic 3</a>
     <!-- Add more links as you create new comic pages -->
 </div>
+
+<footer>
+    &copy; 2024 Daniil Sorokin. All rights reserved.
+</footer>
 
 </body>
 </html>
