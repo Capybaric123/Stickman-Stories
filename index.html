@@ -34,12 +34,6 @@
             justify-content: center;
             margin-top: 20px;
         }
-        .comic-list a {
-            flex: 0 0 30%; /* Allow 3 links per row */
-            margin: 5px;
-            text-decoration: none; /* Remove underline */
-            text-align: center; /* Center text */
-        }
         footer {
             text-align: center;
             margin-top: auto;
@@ -56,7 +50,7 @@
 
 <div class="comic">
     <h2>Latest Comic</h2>
-    <p>Welcome to Chicken Stories! Check out my latest comics using the links below.</p>
+    <p id="latest-comic-description">Loading latest comic...</p>
 </div>
 
 <div class="comic-list">
@@ -69,6 +63,26 @@
 <footer>
     &copy; 2024 Chicken Stories. All rights reserved.
 </footer>
+
+<script>
+    async function fetchLatestComic() {
+        const latestComicNum = 1; // Change this to the latest comic number you have.
+        const comicPage = `comic${latestComicNum}.html`;
+
+        const response = await fetch(comicPage);
+        if (response.ok) {
+            const text = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            const description = doc.querySelector('p').innerHTML; // Get the <p> content
+            document.getElementById('latest-comic-description').innerHTML = description; // Update the latest comic description
+        } else {
+            document.getElementById('latest-comic-description').innerHTML = "No latest comic available.";
+        }
+    }
+
+    fetchLatestComic();
+</script>
 
 </body>
 </html>
