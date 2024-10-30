@@ -37,17 +37,13 @@
         .comic-list a {
             flex: 0 0 30%; /* Allow 3 links per row */
             margin: 5px;
-            padding: 10px 15px;
-            background: #ff6600;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            transition: background 0.3s;
-            border-radius: 0; /* Square buttons */
+            color: #ff6600; /* Text color */
+            text-decoration: none; /* Remove underline */
             text-align: center; /* Center text */
         }
         .comic-list a:hover {
-            background: #ff9900;
+            text-decoration: underline; /* Underline on hover for click feedback */
+            color: #ff9900; /* Change color on hover */
         }
         footer {
             text-align: center;
