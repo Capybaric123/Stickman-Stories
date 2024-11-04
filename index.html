@@ -9,7 +9,7 @@
         body {
             font-family: 'Didot', serif;
             background: linear-gradient(to bottom, gray, silver);
-            background-attachment: Fixed;
+            background-attachment: fixed;
             margin: 0;
             padding: 20px;
             color: #333;
@@ -22,6 +22,8 @@
             background: #fff;
             color: black;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin-bottom: 20px;
         }
         .comic-list {
             display: flex;
@@ -48,7 +50,7 @@
     <hr>
 </header>
 
-<div class="comic">
+<div class="comic" id="latest-comic-container">
     <h2>Latest Comic</h2>
     <p id="latest-comic-description">Loading latest comic...</p>
 </div>
@@ -69,15 +71,28 @@
         const latestComicNum = 1; // Change this to the latest comic number you have.
         const comicPage = `comic${latestComicNum}.html`;
 
-        const response = await fetch(comicPage);
-        if (response.ok) {
-            const text = await response.text();
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(text, 'text/html');
-            const description = doc.querySelector('p').innerHTML; // Get the <p> content
-            document.getElementById('latest-comic-description').innerHTML = description; // Update the latest comic description
-        } else {
-            document.getElementById('latest-comic-description').innerHTML = "No latest comic available.";
+        try {
+            const response = await fetch(comicPage);
+            if (response.ok) {
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                
+                // Get the full div with class comic-content
+                const comicContent = doc.querySelector('.comic-content');
+                
+                // Replace the current comic container with the fetched content
+                if (comicContent) {
+                    document.getElementById('latest-comic-container').innerHTML = comicContent.outerHTML;
+                } else {
+                    document.getElementById('latest-comic-description').innerHTML = "No latest comic content available.";
+                }
+            } else {
+                document.getElementById('latest-comic-description').innerHTML = "No latest comic available.";
+            }
+        } catch (error) {
+            console.error("Failed to fetch the latest comic:", error);
+            document.getElementById('latest-comic-description').innerHTML = "Error loading latest comic.";
         }
     }
 
