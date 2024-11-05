@@ -21,7 +21,7 @@ If you want to help with creating this webcomic you can also use the same email 
 
    b) It can be any other file format which can be opened and read for example .txt .json .docx .pdf .md
 
-3. Make sure that it is appropriate.
+2. Make sure that it is appropriate.
    
    a) no 18+ content (except: guns,some swearing), but still something within the normal range.
 
