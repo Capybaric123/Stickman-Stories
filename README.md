@@ -8,7 +8,7 @@ the comic.
 
 ## About
 
-The idea of making a webcomic was a thrill for me since the moment I learned coding, there was a bunch of other webcomics I was inspiring of while creating the stickman stories itself, those are: **[Lackadaisy](https://lackadaisy.com/)**
+The idea of making a webcomic was a thrill for me since the moment I learned coding, there was a bunch of other things I was inspiring of while creating the stickman stories itself, those are: **[Lackadaisy](https://lackadaisy.com/)** a very cool webcomic, it gave me the idea of making a website, **[Chicken Gun](https://chicken-gun.fandom.com/wiki/Chicken_Gun_Wiki)** a game made by a small developer which became very popular in ru comunity, I was inspired by the fights from there and initially the webcomic idea was to make a comic about chicken gun, but I thought it will be to hard to make it so I finally came up with an idea of creating the stickman stories.
 
 ## Software Usage
 
