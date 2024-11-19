@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman Stories - Info</title>
+    <link href="https://fonts.googleapis.com/css2?family=Didot&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Didot', serif;
+            background: linear-gradient(to bottom, gray, silver);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            color: #000;
+            text-align: center;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        .info-content {
+            padding: 20px;
+            background-color: white;
+            margin-top: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            text-align: center;
+            margin-top: auto;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar Navigation -->
+    <div class="top-bar">
+        <a href="index.html">Home</a>
+        <a href="info.html">Info</a>
+    </div>
+
+    <header>
+        <h1>Info Page</h1>
+        <hr>
+    </header>
+
+    <div class="info-content" id="info-content">
+        <p>Loading information...</p>
+    </div>
+
+    <footer>
+        &copy; 2024 Stickman Stories. All rights reserved.
+    </footer>
+
+    <script>
+        async function fetchInfo() {
+            try {
+                const response = await fetch('README.md');
+                if (response.ok) {
+                    const markdownText = await response.text();
+                    document.getElementById('info-content').innerHTML = marked(markdownText); // Using 'marked' to convert markdown to HTML
+                } else {
+                    document.getElementById('info-content').innerHTML = "Error loading the info page.";
+                }
+            } catch (error) {
+                console.error("Failed to fetch README.md:", error);
+                document.getElementById('info-content').innerHTML = "Error loading the info page.";
+            }
+        }
+
+        fetchInfo();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</body>
+</html>
