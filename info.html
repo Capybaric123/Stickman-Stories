@@ -72,7 +72,11 @@
     <script>
         async function fetchInfo() {
             try {
-                const response = await fetch('README.md');
+                const repoOwner = 'Capybaric123';  // GitHub username
+                const repoName = 'Stickman-Stories';  // GitHub repository name
+                const rawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/main/README.md`;
+
+                const response = await fetch(rawUrl);
                 if (response.ok) {
                     const markdownText = await response.text();
                     document.getElementById('info-content').innerHTML = marked(markdownText); // Using 'marked' to convert markdown to HTML
