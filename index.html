@@ -19,6 +19,21 @@
             color: #000;
             text-align: center;
         }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
         .comic {
             background: gray;
             color: black;
@@ -57,71 +72,70 @@
 </head>
 <body>
 
-<header>
-    <h1>Stickman Stories</h1>
-    <hr>
-</header>
+    <!-- Top Bar Navigation -->
+    <div class="top-bar">
+        <a href="index.html">Home</a>
+        <a href="info.html">Info</a>
+    </div>
 
-<div class="anouncements">
-    <h1><i>Anouncements</i></h1>
-    <p class="anouncement-paragraph">This site is made by me in solo what means that the new parts will be coming out in around 1-2 weeks.
-    I will be very happy if you share this site with your friends so they can enjoy the comics too! If you want 
-    to help me in creating new comics you can follow <a href="https://github.com/Capybaric123/Stickman-Stories" target="_blank rel="noopener noreferrer""><i>this link</i></a> 
-    and check out my github for more information.</p>
-    <hr>
-</div>
+    <header>
+        <h1>Stickman Stories</h1>
+        <hr>
+    </header>
 
-<div class="latest-comic-header">
-    <h1>Latest Comic</h1>
-</div>
+    <div class="anouncements">
+        <h1><i>Anouncements</i></h1>
+        <p class="anouncement-paragraph">This site is made by me in solo what means that the new parts will be coming out in around 1-2 weeks. I will be very happy if you share this site with your friends so they can enjoy the comics too! If you want to help me in creating new comics you can follow <a href="https://github.com/Capybaric123/Stickman-Stories" target="_blank" rel="noopener noreferrer"><i>this link</i></a> and check out my github for more information.</p>
+        <hr>
+    </div>
 
-<div class="comic" id="latest-comic-container">
-    <p id="latest-comic-description">Loading latest comic...</p>
-</div>
+    <div class="latest-comic-header">
+        <h1>Latest Comic</h1>
+    </div>
 
-<div class="comic-list">
-    <a href="comic1.html">Stickman Stories - The begining of something bad</a>
-    <a href="comic2.html">Stickman Stories - The journey</a>
-    <a href="WIP.html">Stickman Stories - The command</a>
-    <!-- Add more links as you create new comic pages -->
-</div>
+    <div class="comic" id="latest-comic-container">
+        <p id="latest-comic-description">Loading latest comic...</p>
+    </div>
 
-<footer>
-    &copy; 2024 Stickman Stories. All rights reserved.
-</footer>
+    <div class="comic-list">
+        <a href="comic1.html">Stickman Stories - The beginning of something bad</a>
+        <a href="comic2.html">Stickman Stories - The journey</a>
+        <a href="WIP.html">Stickman Stories - The command</a>
+    </div>
 
-<script>
-    async function fetchLatestComic() {
-        const latestComicNum = 1; // Change this to the latest comic number you have.
-        const comicPage = `comic${latestComicNum}.html`;
+    <footer>
+        &copy; 2024 Stickman Stories. All rights reserved.
+    </footer>
 
-        try {
-            const response = await fetch(comicPage);
-            if (response.ok) {
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                
-                // Get the full div with class comic-content
-                const comicContent = doc.querySelector('.comic-content');
-                
-                // Replace the current comic container with the fetched content
-                if (comicContent) {
-                    document.getElementById('latest-comic-container').innerHTML = comicContent.outerHTML;
+    <script>
+        async function fetchLatestComic() {
+            const latestComicNum = 1; // Change this to the latest comic number you have.
+            const comicPage = `comic${latestComicNum}.html`;
+
+            try {
+                const response = await fetch(comicPage);
+                if (response.ok) {
+                    const text = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(text, 'text/html');
+
+                    const comicContent = doc.querySelector('.comic-content');
+                    if (comicContent) {
+                        document.getElementById('latest-comic-container').innerHTML = comicContent.outerHTML;
+                    } else {
+                        document.getElementById('latest-comic-description').innerHTML = "No latest comic content available.";
+                    }
                 } else {
-                    document.getElementById('latest-comic-description').innerHTML = "No latest comic content available.";
+                    document.getElementById('latest-comic-description').innerHTML = "No latest comic available.";
                 }
-            } else {
-                document.getElementById('latest-comic-description').innerHTML = "No latest comic available.";
+            } catch (error) {
+                console.error("Failed to fetch the latest comic:", error);
+                document.getElementById('latest-comic-description').innerHTML = "Error loading latest comic.";
             }
-        } catch (error) {
-            console.error("Failed to fetch the latest comic:", error);
-            document.getElementById('latest-comic-description').innerHTML = "Error loading latest comic.";
         }
-    }
 
-    fetchLatestComic();
-</script>
+        fetchLatestComic();
+    </script>
 
 </body>
 </html>
