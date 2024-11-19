@@ -7,6 +7,9 @@ chat in there and give me ideas for new parts of the comic. I hope everyone like
 the comic.
 
 ![Static Badge](https://img.shields.io/badge/Youtube-red?logo=youtube&labelColor=gray)
+![Static Badge](https://img.shields.io/badge/Wiki-blue?logo=gitbook&labelColor=gray)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/Capybaric123/Stickman-Stories?style=flat&logo=github&color=green)
 
 
 ## About
