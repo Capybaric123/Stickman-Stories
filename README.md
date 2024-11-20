@@ -2,10 +2,11 @@
 
 This is a site made for my own webcomic.
 The site is made using HTML and CSS. While there is JavaScript it's very simple.
-I will probably create something like a wiki page or a discussion for you guys to 
-chat in there and give me ideas for new parts of the comic. I hope everyone likes 
-the comic.
+I will probably make a discussions page for you guys to 
+chat in there and give me ideas for new parts of the comic. 
+I hope everyone likes the comic.
 
+[![Static Badge](https://img.shields.io/badge/chat-on_gitter-green?style=flat&labelColor=gray)](https://app.gitter.im/#/room/#Stickman-Stories:gitter.im)
 ![Static Badge](https://img.shields.io/badge/Youtube-red?logo=youtube&labelColor=gray)
 [![Static Badge](https://img.shields.io/badge/Wiki-blue?logo=gitbook&logoColor=white&labelColor=gray)](https://github.com/Capybaric123/Stickman-Stories/wiki)
 
