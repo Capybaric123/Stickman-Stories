@@ -6,54 +6,7 @@
     <title>Stickman Stories</title>
     <link href="https://fonts.googleapis.com/css2?family=Didot&display=swap" rel="stylesheet">
     <link rel="icon" href="images/icon.png" type="image/png">
-    <style>
-        body {
-            font-family: 'Didot', serif;
-            background: linear-gradient(to bottom, gray, silver);
-            background-attachment: fixed;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        header {
-            color: #000;
-            text-align: center;
-        }
-        .comic {
-            background: gray;
-            color: black;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .comic-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .comic-list a {
-            flex: 0 0 30%;
-            text-align: center;
-        }
-        .latest-comic-header {
-            text-align: center;
-            color: black;
-        }
-        .anouncements {
-            text-align: center;
-            color: black;
-        }
-        .anouncement-paragraph {
-            font-size: 24px;
-        }
-        footer {
-            text-align: center;
-            margin-top: auto;
-            font-size: 12px;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS -->
 </head>
 <body>
 
@@ -66,7 +19,7 @@
     <h1><i>Anouncements</i></h1>
     <p class="anouncement-paragraph">This site is made by me in solo what means that the new parts will be coming out in around 1-2 weeks.
     I will be very happy if you share this site with your friends so they can enjoy the comics too! If you want 
-    to help me in creating new comics you can follow <a href="https://github.com/Capybaric123/Stickman-Stories" target="_blank rel="noopener noreferrer""><i>this link</i></a> 
+    to help me in creating new comics you can follow <a href="https://github.com/Capybaric123/Stickman-Stories" target="_blank" rel="noopener noreferrer"><i>this link</i></a> 
     and check out my github for more information.</p>
     <hr>
 </div>
@@ -90,38 +43,7 @@
     &copy; 2024 Stickman Stories. All rights reserved.
 </footer>
 
-<script>
-    async function fetchLatestComic() {
-        const latestComicNum = 1; // Change this to the latest comic number you have.
-        const comicPage = comic${latestComicNum}.html;
-
-        try {
-            const response = await fetch(comicPage);
-            if (response.ok) {
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                
-                // Get the full div with class comic-content
-                const comicContent = doc.querySelector('.comic-content');
-                
-                // Replace the current comic container with the fetched content
-                if (comicContent) {
-                    document.getElementById('latest-comic-container').innerHTML = comicContent.outerHTML;
-                } else {
-                    document.getElementById('latest-comic-description').innerHTML = "No latest comic content available.";
-                }
-            } else {
-                document.getElementById('latest-comic-description').innerHTML = "No latest comic available.";
-            }
-        } catch (error) {
-            console.error("Failed to fetch the latest comic:", error);
-            document.getElementById('latest-comic-description').innerHTML = "Error loading latest comic.";
-        }
-    }
-
-    fetchLatestComic();
-</script>
+<script src="latest-comic.js"></script> <!-- Link to the external JavaScript file -->
 
 </body>
 </html>
