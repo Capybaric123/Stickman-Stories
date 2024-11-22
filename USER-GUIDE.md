@@ -102,4 +102,16 @@ This is how to insert an image, but you will need a template where to place the 
 Also you will need to go to the index.html which is basically the home page and also insert a link to your comic page which should be located in the root folder for this case.
 
 ```
+<div class="comic-list">
+    <a href="comic1.html">Stickman Stories - The begining of something bad</a>
+    <a href="comic2.html">Stickman Stories - The journey</a>
+    <a href="WIP.html">Stickman Stories - The command</a>
+    <!-- Add more links as you create new comic pages -->
+</div>
+```
+
+That was the part where you will insert your link to your page, here is how you add a link:
+
+```
+<a href="PATH/TO/YOUR/PAGE">Button Text</a>
 ```
