@@ -1,18 +1,18 @@
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    background: linear-gradient(to bottom, gray, silver);
+    background-color: #212121;
     background-attachment: fixed;
     margin: 0;
     padding: 20px;
     color: #333;
 }
 header {
-    color: #000;
+    color: white;
     text-align: center;
 }
 .comic {
-    background: gray;
-    color: black;
+    background: #212121;
+    color: white;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     padding: 20px;
     margin-bottom: 20px;
@@ -26,6 +26,7 @@ header {
 .comic-list a {
     flex: 0 0 30%;
     text-align: center;
+    color: #2271b1;
 }
 .latest-comic-header {
     text-align: center;
@@ -33,18 +34,18 @@ header {
 }
 .anouncements {
     text-align: center;
-    color: black;
+    color: white;
 }
 .anouncement-paragraph {
-    font-size: 24px;
+    font-size: 20px;
 }
 .links-paragraph {
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
 }
 footer {
     text-align: center;
     margin-top: auto;
     font-size: 12px;
-    color: #666;
+    color: gray;
 }
