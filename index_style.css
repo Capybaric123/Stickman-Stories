@@ -40,10 +40,16 @@ header {
     font-size: 20px;
     color: black;
 }
+.anouncement-paragraph a {
+    color: #2271b1;
+}
 .links-paragraph {
     font-size: 20px;
     text-align: center;
     color: black;
+}
+.links-paragraph a {
+    color: #2271b1;
 }
 footer {
     text-align: center;
