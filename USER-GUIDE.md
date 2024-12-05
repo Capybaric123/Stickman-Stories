@@ -8,7 +8,7 @@ You might think you don't have anything else to have to host your own comic webs
 
 ---
 
-Before you start you will requier atleast minimal HTML knowledge as you will still need to edit the website to change your **comic name** and maybe even the **url**, also you will need to be able to fit this in something less than a gigabyte.
+Before you start you will requier atleast minimal HTML knowledge as you will still need to edit the website to change your **comic name** and maybe even the **url**, also you will need to be able to fit this in something less than a gigabyte. Because the github pages service doesn't alow you to have a website weighting more than a gigabyte, so make sure to compress everything as possibly more cause' otherwise you will need to use your own server for this and also setup jekyll as the site is built around jekyll and will need major rework in case you want to make it run using different software. But in case you want to try recoding the site or even more remaking it using this software I recomend contacting me.
 
 ## Inserting images
 
