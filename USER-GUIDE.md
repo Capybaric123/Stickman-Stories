@@ -125,3 +125,11 @@ That was the part where you will insert your link to your page, here is how you 
 ```
 <a href="PATH/TO/YOUR/PAGE">Button Text</a>
 ```
+
+## Help
+
+If you think that you need some help from me you can always use this email to contact me anytime: <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com" target="_blank">dancho321sorokin@gmail.com</a>
+
+Just there is a small chance that you will need to wait a bit until I can respond to you and help with your question.
+
+Good Luck!

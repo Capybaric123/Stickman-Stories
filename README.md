@@ -2,15 +2,16 @@
 
 This is a site made for my own webcomic.
 The site is made using HTML and CSS. While there is JavaScript it's very simple.
+Also the site is using the md-block code for markdown rendering to make creating pages easier and the site is built using jekyll static page build system.
 I will probably make a discussions page for you guys to 
 chat in there and give me ideas for new parts of the comic. 
 I hope everyone likes the comic.
 
-[![Static Badge](https://img.shields.io/badge/chat-on_gitter-green?style=flat&labelColor=gray)](https://app.gitter.im/#/room/#Stickman-Stories:gitter.im)
-![Static Badge](https://img.shields.io/badge/Youtube-red?logo=youtube&labelColor=gray)
-[![Static Badge](https://img.shields.io/badge/Wiki-blue?logo=gitbook&logoColor=white&labelColor=gray)](https://github.com/Capybaric123/Stickman-Stories/wiki)
+[![Static Badge](https://img.shields.io/badge/chat-on_gitter-green?style=plastic&labelColor=gray)](https://app.gitter.im/#/room/#Stickman-Stories:gitter.im)
+![Static Badge](https://img.shields.io/badge/Youtube-red?logo=youtube&labelColor=gray&style=plastic)
+[![Static Badge](https://img.shields.io/badge/Wiki-blue?logo=wikipedia&logoColor=white&labelColor=gray&style=plastic)](https://github.com/Capybaric123/Stickman-Stories/wiki)
 
-![GitHub Repo stars](https://img.shields.io/github/stars/Capybaric123/Stickman-Stories?style=flat&logo=github&color=green)
+![GitHub Repo stars](https://img.shields.io/github/stars/Capybaric123/Stickman-Stories?style=plastic&logo=github&color=green)
 
 
 ## About
@@ -22,7 +23,7 @@ Of course there was a lot more of other things I was inspiring of while creating
 ## Software Usage
 
 In case you found this website software interresting and want to use it for your own comics, 
-you can access me via email using this adress: dancho321sorokin@gmail.com
+you can access me via email using this adress: <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com" target="_blank">dancho321sorokin@gmail.com</a>
 
 
 P.S.
@@ -41,9 +42,8 @@ is a bit exausting.
 
 ## Wiki
 
-There soon will be a wiki page for this webcomic and there will be posted only checked information (checked by the creator of the comic) and will only contain 
-usefull information about the website, of course the actual comic series, and also the cut features secrets and the story of the website creation.
+There is a wiki page for this comic made by the comic author what means that it will contain only actual information from the comic and also will be checked and moderated for any bugs or issues which can cause misunderstanding. So go check it out right now or else there is a chance that you will not understand what is this whole thing about as there is a lot of explanation to stuff in the comic as well as the lore book which you can find at the main or home page.
 
 ## Discussions
 
-There would be a discussions page for this website coming soon...
+There is a discussion page for this website on github and also a room on gitter where you can chat about the comic series and also just chill and hangout, so I recomend on going back to the top of te page and clicking on that button which literally said ***chat on gitter***. So if you have any ideas how to improve the website or an idea for a new comic you can always tell that in the github discussions page, even though I recomend contacting me on my email which was shown earlier in the page in case you want to give me a new idea for a comic, but I hope you got te idea right, and if you just want to chat about your favourite or maybe not really comic series you can follow the button at the top of the page to see the gitter and also get and invite there. So good luck on your journey in to the fun and sometimes terrifying lore of the stickman-stories!
