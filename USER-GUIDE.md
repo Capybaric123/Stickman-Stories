@@ -2,6 +2,14 @@
 
 This is a barebones guide for the software users of this webcomic. Here I will explain how to make a simple comic page, because this is the only part you will need to know to make your own page and not just use the template...
 
+## Requierments
+
+You might think you don't have anything else to have to host your own comic website, but there is still something you need to have before you start your journey in to the world of fun drawing and sharing your drawings with your comunity of friends or even other people who just found your site.
+
+---
+
+Before you start you will requier atleast minimal HTML knowledge as you will still need to edit the website to change your **comic name** and maybe even the **url**, also you will need to be able to fit this in something less than a gigabyte.
+
 ## Inserting images
 
 Inserting an image might seem easy, but don't get fooled by the simplicity! It is actually not that simple...
