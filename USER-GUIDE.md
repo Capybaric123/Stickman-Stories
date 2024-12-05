@@ -12,7 +12,9 @@ That was an example of a simple image, but there is a chance that you will need 
 
 In this case you will need to do this:
 
-`<img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;>`
+```
+<img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;>
+```
 
 Now this is way longer than the previous part of code, and this is the interresting part about html.
 
