@@ -1,7 +1,7 @@
 body {
   font-family: Helvetica Neue, sans-serif;
   background: linear-gradient(to bottom, gray, silver);
-  background-atachment: Fixed;
+  background-attachment: Fixed;
   margin: 0;
   padding: 20px;
   color: #333;
