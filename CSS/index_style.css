@@ -1,6 +1,6 @@
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    background: linear-gradient(to bottom, gray, silver);
+    background: #444 url(../images/bg_body.png);
     background-attachment: fixed;
     margin: 0;
     padding: 20px;
@@ -50,6 +50,8 @@ header {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    width: 970px;
+    align-self: center;
 }
 
 .comic-list {
@@ -60,14 +62,15 @@ header {
 }
 
 .comic-list a {
-    flex: 0 0 30%;
+    flex: 0 0 20%;
     text-align: center;
-    color: #2271b1;
 }
 
 .latest-comic-header {
     text-align: center;
     color: black;
+    width: 970px;
+    align-self: center;
 }
 
 .anouncements {
