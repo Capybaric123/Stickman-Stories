@@ -15,6 +15,34 @@ header {
     text-align: center;
 }
 
+.wrap {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 970px;
+    display: flex;
+}
+
+.main-body {
+    width: 790px;
+    background: #9c9c9c;
+}
+
+.sidebar {
+    width: 140px;
+    padding: 20px;
+    background: #979797;
+    flex-shrink: 0; /* Prevents sidebar from shrinking */
+    border-left: 1px solid #8f8f8f;
+}
+
+.sidebar-item a {
+    display: block;
+    padding: 0 0 0px 15px;
+    margin-bottom: 10px;
+}
+
 .comic {
     background: #9c9c9c;
     color: black;
