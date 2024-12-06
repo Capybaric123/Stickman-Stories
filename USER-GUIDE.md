@@ -21,7 +21,7 @@ That was an example of a simple image, but there is a chance that you will need 
 In this case you will need to do this:
 
 ```
-<img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;>
+<img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;">
 ```
 
 Now this is way longer than the previous part of code, and this is the interresting part about html.
@@ -38,7 +38,7 @@ That is the place where you will put the image, here is an example:
 
 ```
 <div class="comic-content">
-  <img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;>
+  <img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;">
 </div>
 ```
 
@@ -122,7 +122,7 @@ This is how to insert an image, but you will need a template where to place the 
         </header>
 
         <div class="comic-content">
-            <h2>Stickman Stories - The begining of something bad</h2>
+            <h2>Stickman Stories - </h2>
         </div>
     </div>
     <div class="sidebar">
