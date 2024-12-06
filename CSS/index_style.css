@@ -32,21 +32,6 @@ header {
     text-align: center;
     color: black;
 }
-.sidenav {
-    height: 100%;
-    width: 160px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    display: block;
-}
 .anouncements {
     text-align: center;
     color: black;
