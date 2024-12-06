@@ -19,6 +19,10 @@ header {
     margin-top: 20px;
 }
 
+.nothing-here {
+    text-align: center;
+}
+
 .comic-content {
     background: #9c9c9c;
     color: black;
