@@ -64,6 +64,7 @@ header {
 .comic-list a {
     flex: 0 0 20%;
     text-align: center;
+    color: #40659b;
 }
 
 .latest-comic-header {
@@ -84,7 +85,7 @@ header {
 }
 
 .anouncement-paragraph a {
-    color: #2271b1;
+    color: #40659b;
 }
 
 footer {

@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Helvetica Neue, sans-serif;
-            background: linear-gradient(to bottom, gray, silver);
+            background: #444 url(images/bg_body.png);
             background-attachment: Fixed;
             margin: 0;
             padding: 20px;
@@ -17,6 +17,28 @@
         header {
             color: black;
             text-align: center;
+        }
+        .wrap {
+            margin: 0 auto;
+            width: 970px;
+            display: flex;
+        }
+        .main-body {
+            width: 790px;
+            background: #9c9c9c;
+        }
+        .sidebar {
+            width: 140px;
+            padding: 20px;
+            background: #979797;
+            flex-shrink: 0; /* Prevents sidebar from shrinking */
+            border-left: 1px solid #8f8f8f;
+        }
+        .sidebar-item a {
+            display: block;
+            padding: 0 0 0px 15px;
+            margin-bottom: 10px;
+            color: #40659b;
         }
         .comic-list {
             display: flex;
@@ -28,14 +50,13 @@
         .comic-list a {
             flex: 0 0 30%;
             text-align: center;
-            color: #2271b1;
+            color: #40659b;
         }
         .comic-content {
-            background: #9c9c9c;
             color: black;
             padding: 20px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
+            margin-bottom: 0px;
         }
         footer {
             text-align: center;
@@ -46,16 +67,25 @@
     </style>
 </head>
 <body>
+<div class="wrap">
+        <div class="main-body">
+        <header>
+            <h1>Stickman Stories</h1>
+            <hr>
+        </header>
 
-<header>
-    <h1>Stickman Stories</h1>
-    <hr>
-</header>
-
-<div class="comic-content">
-    <h2>Stickman Stories - The begining of something bad</h2>
+        <div class="comic-content">
+            <h2>Stickman Stories - The begining of something bad</h2>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-item">
+            <a href="index.html">Home</a>
+            <a href="info.html">Info</a>
+            <a href="lore_book.html">Lore book</a>
+        </div>
+    </div>
 </div>
-
 <div class="comic-list">
     <a href="index.html">Home Page</a>
 </div>
