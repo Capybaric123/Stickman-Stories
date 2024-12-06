@@ -15,17 +15,7 @@ header {
     text-align: center;
 }
 
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 100%;
-}
 
-.main-content {
-    flex: 1;
-    max-width: 70%; /* This keeps the main content area narrower */
-}
 
 .comic {
     background: #9c9c9c;
@@ -66,36 +56,6 @@ header {
 
 .anouncement-paragraph a {
     color: #2271b1;
-}
-
-.sidebar {
-    width: 25%;
-    background-color: #f4f4f4;
-    padding: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar h2 {
-    text-align: center;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #2271b1;
-    font-size: 18px;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
 }
 
 footer {
