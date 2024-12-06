@@ -5,52 +5,99 @@ body {
     margin: 0;
     padding: 20px;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
+
 header {
     color: black;
     text-align: center;
 }
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 70%; /* This keeps the main content area narrower */
+}
+
 .comic {
     background: #9c9c9c;
     color: black;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     padding: 20px;
     margin-bottom: 20px;
+    width: 100%;
 }
+
 .comic-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
 }
+
 .comic-list a {
     flex: 0 0 30%;
     text-align: center;
     color: #2271b1;
 }
+
 .latest-comic-header {
     text-align: center;
     color: black;
 }
+
 .anouncements {
     text-align: center;
     color: black;
 }
+
 .anouncement-paragraph {
     font-size: 20px;
     color: black;
 }
+
 .anouncement-paragraph a {
     color: #2271b1;
 }
-.links-paragraph {
-    font-size: 20px;
+
+.sidebar {
+    width: 25%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
     text-align: center;
-    color: black;
 }
-.links-paragraph a {
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
     color: #2271b1;
+    font-size: 18px;
 }
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
 footer {
     text-align: center;
     margin-top: auto;
