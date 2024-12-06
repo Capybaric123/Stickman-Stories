@@ -19,7 +19,8 @@ header {
     background: #9c9c9c;
     color: black;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin-bottom: 20px;
 }
 
