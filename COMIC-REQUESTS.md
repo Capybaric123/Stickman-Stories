@@ -21,3 +21,7 @@ If you want to help with creating this webcomic you can also use this email: dan
    a) You can send me a whole ilustration too, but it needs to be in one of these formats: .png .jpg .jpeg .webp
 
    b) You can't send me files with these formats: .psd .sai .kra .fla .tff .pdf .bmp .ai .svg .eps
+
+## All done!
+
+So, it seems that you are done with all of that, and you are ready to send me a mail with your comic? Great! You can contact me by using this link to my email: <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com" target="_blank">dancho321sorokin@gmail.com</a> and you are done! Good luck with your comics!

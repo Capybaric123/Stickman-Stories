@@ -115,7 +115,7 @@ This is how to insert an image, but you will need a template where to place the 
 </head>
 <body>
 <div class="wrap">
-        <div class="main-body">
+    <div class="main-body">
         <header>
             <h1>Stickman Stories</h1>
             <hr>
