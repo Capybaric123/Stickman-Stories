@@ -62,7 +62,7 @@ header {
 }
 
 .comic-list a {
-    flex: 0 0 10%;
+    flex: 0 0 20%;
     text-align: center;
     color: #40659b;
 }
