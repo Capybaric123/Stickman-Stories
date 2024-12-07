@@ -62,7 +62,7 @@ header {
 }
 
 .comic-list a {
-    flex: 0 0 20%;
+    flex: 0 0 10%;
     text-align: center;
     color: #40659b;
 }
@@ -85,7 +85,7 @@ header {
 }
 
 .anouncement-paragraph a {
-    color: #4d79bb;
+    color: #40659b;
 }
 
 footer {
