@@ -37,11 +37,16 @@ header {
     border-left: 1px solid #8f8f8f;
 }
 
+.sidebar-item ul li {
+    padding: 0, 0, 0, 15%;
+}
+
 .sidebar-item a {
-    display: block;
-    padding: 0 0 0px 15px;
-    margin-bottom: 10px;
     color: #40659b;
+}
+
+.sidebar-item a:hover {
+    background: rgba(255, 255, 0, 0.2);
 }
 
 .comic {

@@ -50,68 +50,10 @@ This is how to insert an image, but you will need a template where to place the 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stickman Stories - </title>
+    <title>Stickman Stories - The lore book</title>
+    <script type="module" src="JS/md-block.js"></script>
     <link rel="icon" href="images/icon.png" type="image/png">
-    <style>
-        body {
-            font-family: Helvetica Neue, sans-serif;
-            background: #444 url(images/bg_body.png);
-            background-attachment: Fixed;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        header {
-            color: black;
-            text-align: center;
-        }
-        .wrap {
-            margin: 0 auto;
-            width: 970px;
-            display: flex;
-        }
-        .main-body {
-            width: 790px;
-            background: #9c9c9c;
-        }
-        .sidebar {
-            width: 140px;
-            padding: 20px;
-            background: #979797;
-            flex-shrink: 0; /* Prevents sidebar from shrinking */
-            border-left: 1px solid #8f8f8f;
-        }
-        .sidebar-item a {
-            display: block;
-            padding: 0 0 0px 15px;
-            margin-bottom: 10px;
-            color: #40659b;
-        }
-        .comic-list {
-            display: flex;
-            color: white;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .comic-list a {
-            flex: 0 0 30%;
-            text-align: center;
-            color: #40659b;
-        }
-        .comic-content {
-            color: black;
-            padding: 20px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            margin-bottom: 0px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/comic_style.css">
 </head>
 <body>
 <div class="wrap">
@@ -122,19 +64,28 @@ This is how to insert an image, but you will need a template where to place the 
         </header>
 
         <div class="comic-content">
-            <h2>Stickman Stories - </h2>
         </div>
     </div>
     <div class="sidebar">
         <div class="sidebar-item">
-            <a href="index.html">Home</a>
-            <a href="info.html">Info</a>
-            <a href="lore_book.html">Lore book</a>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="info.html">Info</a>
+                </li>
+                <li>
+                    <a href="changelog.html">Changelog</a>
+                </li>
+                <li>
+                    <a href="lore_book.html">Lore book</a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
 <div class="comic-list">
-    <a href="index.html">Home Page</a>
 </div>
 
 <footer>
@@ -143,7 +94,6 @@ This is how to insert an image, but you will need a template where to place the 
 
 </body>
 </html>
-
 ```
 
 Also you will need to go to the index.html which is basically the home page and also insert a link to your comic page which should be located in the root folder for this case.
