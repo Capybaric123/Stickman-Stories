@@ -28,8 +28,6 @@ header {
 }
 .sidebar-item ul li {
     padding: 0, 0, 0, 15%;
-    background:url(../images/bullet.gif)no-repeat 0 4px;
-    line-height: 1.5em;
 }
 .sidebar-item a {
     color: #40659b;
