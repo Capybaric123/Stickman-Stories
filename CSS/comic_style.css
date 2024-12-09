@@ -28,6 +28,8 @@ header {
 }
 .sidebar-item ul li {
     padding: 0, 0, 0, 15%;
+}
+.sidebar-item ul {
     list-style-image: url(../images/bullet.gif);
 }
 .sidebar-item a {
