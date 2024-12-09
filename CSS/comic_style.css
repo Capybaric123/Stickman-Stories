@@ -28,7 +28,7 @@ header {
 }
 .sidebar-item ul li {
     padding: 0, 0, 0, 15%;
-    background:url(css-img/bullet.gif) no-repeat 0 4px;
+    background:url(../images/bullet.gif) no-repeat 0 4px;
     line-height:1.5em;
     text-align:left
 }
