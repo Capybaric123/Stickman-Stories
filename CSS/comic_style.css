@@ -6,19 +6,23 @@ body {
     padding: 20px;
     color: #333;
 }
+
 header {
     color: black;
     text-align: center;
 }
+
 .wrap {
     margin: 0 auto;
     width: 970px;
     display: flex;
 }
+
 .main-body {
     width: 790px;
     background: #9c9c9c;
 }
+
 .sidebar {
     width: 140px;
     padding: 20px;
@@ -26,15 +30,19 @@ header {
     flex-shrink: 0; /* Prevents sidebar from shrinking */
     border-left: 1px solid #8f8f8f;
 }
+
 .sidebar-item ul li {
     padding: 0, 0, 0, 15%;
 }
+
 .sidebar-item a {
     color: #40659b;
 }
+
 .sidebar-item a:hover {
     background: rgba(255, 255, 0, 0.2);
 }
+
 .comic-list {
     display: flex;
     color: white;
@@ -42,20 +50,24 @@ header {
     justify-content: center;
     margin-top: 20px;
 }
+
 .comic-list a {
     flex: 0 0 30%;
     text-align: center;
     color: #40659b;
 }
+
 .comic-content {
     color: black;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     margin-bottom: 0px;
 }
+
 .comic-content a {
     color: #40659b;
 }
+
 footer {
     text-align: center;
     margin-top: 20px;
