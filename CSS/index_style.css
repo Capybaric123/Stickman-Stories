@@ -39,6 +39,7 @@ header {
 
 .sidebar-item ul li {
     padding: 0, 0, 0, 15%;
+    background:url(../images/bullet.gif)
 }
 
 .sidebar-item a {
