@@ -27,10 +27,11 @@ header {
     border-left: 1px solid #8f8f8f;
 }
 .sidebar-item ul li {
-    padding: 0, 0, 0, 15%;
+    padding: 0, 0, 10px, 15px;
     background:url(../images/bullet.gif) no-repeat 0 4px;
     line-height:1.5em;
-    text-align:left
+    text-align:left;
+
 }
 .sidebar-item a {
     color: #40659b;
