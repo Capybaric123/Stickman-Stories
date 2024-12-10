@@ -46,6 +46,7 @@ header {
 .changelog-item {
     display: list-item;
     margin-left: 2em;
+    font-size: 15px;
     color: black;
 }
 
