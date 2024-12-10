@@ -54,6 +54,8 @@ header {
     margin-left: 2em;
     font-size: 20px;
     color: black;
+    text-align: left; /* Align text to the left */
+    list-style-position: inside; /* Ensures the bullets stay inside the container */
 }
 
 .comic {
