@@ -14,7 +14,9 @@ Before you start you will requier atleast minimal HTML knowledge as you will sti
 
 Inserting an image might seem easy, but don't get fooled by the simplicity! It is actually not that simple...
 
-`<img src="PATH/TO/YOUR/IMAGE.extension" style="max-width: 100%;">`
+```
+<img src="PATH/TO/YOUR/IMAGE.extension" style="max-width: 100%;">
+```
 
 That was an example of a simple image, but there is a chance that you will need to center the image which will happen pretty often since you are making a webcomic.
 
@@ -41,6 +43,8 @@ That is the place where you will put the image, here is an example:
   <img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;">
 </div>
 ```
+
+## Comic template
 
 This is how to insert an image, but you will need a template where to place the image and also the place where you will find the previous part of code in. So here is the template for a comic page:
 
@@ -96,6 +100,8 @@ This is how to insert an image, but you will need a template where to place the 
 </html>
 ```
 
+## Adding a path
+
 Also you will need to go to the index.html which is basically the home page and also insert a link to your comic page which should be located in the root folder for this case.
 
 ```
@@ -111,6 +117,20 @@ That was the part where you will insert your link to your page, here is how you 
 
 ```
 <a href="PATH/TO/YOUR/PAGE">Button Text</a>
+```
+
+## Changelog
+
+In case you wonder how to use the changelog page, for example you are helping with the development, here is a short guide for this one.
+
+First let's start of with a simple explanation:
+
+***A changelog is a text file or a web page where you explain what you've changed in the code after an update.*** i.e. Added a new comic.
+
+Now that you know what is a changelog I will show you a template which you can paste in the comic-content "div" element in the changelog page:
+
+```
+<p class="anouncement-paragraph" style="display: list-item; margin-left: 2em;"></p>
 ```
 
 ## Help
