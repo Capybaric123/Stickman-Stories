@@ -49,6 +49,13 @@ header {
     background: rgba(255, 255, 0, 0.2);
 }
 
+.changelog-item {
+    display: list-item;
+    margin-left: 2em;
+    font-size: 20px;
+    color: black;
+}
+
 .comic {
     background: #9c9c9c;
     color: black;
