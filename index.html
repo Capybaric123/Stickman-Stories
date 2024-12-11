@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Didot&display=swap" rel="stylesheet">
     <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="CSS/index_style.css"> <!-- Link to the external CSS -->
+    <script type="module" src="JS/md-block.js"></script> <!-- Link to the external JS -->
 </head>
 <body>
 <div class="wrap">
@@ -17,15 +18,17 @@
         </header>
         <div class="anouncements">
             <h1>Anouncements</h1>
-            <h2>Changelog for 10.12.2024</h2>
-            <p class="changelog-item">Modified the user guide</p>
-            <p class="changelog-item">Changed some stuff on github</p>
-            <p class="changelog-item">Updated the home page</p>
-            <p class="changelog-item">Updated CSS</p>
-            <p class="changelog-item">Info page complete rework</p>
-            <p class="changelog-item">Added a new folder for markdown</p>
-            <p class="changelog-item">Added a source code file for markdown part of the info page</p>
-            <hr>
+            <md-block>
+                ## Changelog for 11.12.2024
+
+                - Updated the lore book
+                - Updated the wiki page
+                - Updated the home page
+
+                ---
+
+                ***We have finally hit 400 deployments on github***
+            </md-block>
             <h1>Links</h1>
             <a href="https://github.com/Capybaric123/Stickman-Stories/wiki/Home" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/Wiki-blue?style=plastic&logo=wikipedia&logoColor=white&labelColor=gray"></a>
             <a href="https://github.com/Capybaric123/Stickman-Stories" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/GitHub-gray?style=plastic&logo=github&logoColor=white&logoSize=auto&labelColor=gray"></a>
