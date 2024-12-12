@@ -1,6 +1,6 @@
 body {
     font-family: Helvetica Neue, sans-serif;
-    background: #444 url(images/bg_body.png);
+    background: #444 url(../images/bg_body.png);
     background-attachment: Fixed;
     margin: 0;
     padding: 20px;
