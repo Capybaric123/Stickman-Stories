@@ -54,7 +54,7 @@ This is how to insert an image, but you will need a template where to place the 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stickman Stories - The lore book</title>
+    <title>Stickman Stories - </title>
     <script type="module" src="JS/md-block.js"></script>
     <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="CSS/comic_style.css">
@@ -84,6 +84,9 @@ This is how to insert an image, but you will need a template where to place the 
                 </li>
                 <li>
                     <a href="lore_book.html">Lore book</a>
+                </li>
+                                <li>
+                    <a href="https://github.com/Capybaric123/Stickman-Stories/wiki/">Wiki</a>
                 </li>
             </ul>
         </div>
