@@ -136,6 +136,71 @@ Now that you know what is a changelog I will show you a template which you can p
 <p class="anouncement-paragraph" style="display: list-item; margin-left: 2em;"></p>
 ```
 
+## Wiki
+
+Now, let's say that you want to use that sweet wiki page in the folder near all of the other code stuff "But how do you do that?" you would say, I'm here to help you! So first you should know that you need to at least know what you are going to write about, next you will need markdown knowledge as markdown is the syntax which is used for the wiki page.
+
+---
+
+Let's start of with a template!
+
+Here is a template file which you will place in to the Wiki folder:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman Stories - Wiki</title>
+    <script type="module" src="../JS/md-block.js"></script>
+    <link rel="icon" href="../images/icon.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/comic_style.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="main-body">
+        <header>
+            <h1>Stickman Stories</h1>
+            <hr>
+        </header>
+
+        <div class="comic-content">
+            <md-block>
+            [//] # (You type your content here)
+            </md-block>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-item">
+            <ul>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../info.html">Info</a>
+                </li>
+                <li>
+                    <a href="../changelog.html">Changelog</a>
+                </li>
+                <li>
+                    <a href="../lore_book.html">Lore book</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="comic-list">
+</div>
+
+<footer>
+    &copy; 2024 Stickman Stories. All rights reserved.
+</footer>
+
+</body>
+</html>
+```
+
 ## Help
 
 If you think that you need some help from me you can always use this email to contact me anytime: <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com" target="_blank">dancho321sorokin@gmail.com</a>
