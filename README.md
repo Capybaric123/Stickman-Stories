@@ -25,7 +25,7 @@ Of course there was a lot more of other things I was inspiring of while creating
 In case you found this website software interresting and want to use it for your own comics, 
 you can access me via email using this adress: <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com" target="_blank">dancho321sorokin@gmail.com</a>
 
-When you got the software you can also check out the [user-guide](USER-GUIDE.md) for information about software usage and guides to how to use the website and how to make pages for comics and for the wiki, if you need it of course.
+When you got the software you can also check out the [user guide](USER-GUIDE.md) for information about software usage and guides to how to use the website and how to make pages for comics and for the wiki, if you need it of course.
 
 P.S.
 There is a chance that you will need to wait for a while, because the software dev is a bit lazy ;-)
