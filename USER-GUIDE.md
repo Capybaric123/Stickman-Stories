@@ -186,6 +186,9 @@ Here is a template file which you will place in to the Wiki folder:
                 <li>
                     <a href="../lore_book.html">Lore book</a>
                 </li>
+                <li>
+                    <a href="wiki.html">Wiki</a>
+                </li>
             </ul>
         </div>
     </div>
