@@ -9,7 +9,7 @@ I hope everyone likes the comic.
 
 [![Static Badge](https://img.shields.io/badge/chat-on_gitter-green?style=plastic&labelColor=gray)](https://app.gitter.im/#/room/#Stickman-Stories:gitter.im)
 ![Static Badge](https://img.shields.io/badge/Youtube-red?logo=youtube&labelColor=gray&style=plastic)
-[![Static Badge](https://img.shields.io/badge/Wiki-blue?logo=wikipedia&logoColor=white&labelColor=gray&style=plastic)](https://github.com/Capybaric123/Stickman-Stories/wiki)
+[![Static Badge](https://img.shields.io/badge/Wiki-blue?logo=wikipedia&logoColor=white&labelColor=gray&style=plastic)](https://stickman-stories.ddns.net/Wiki/wiki.html)
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/Capybaric123/Stickman-Stories?style=plastic&logo=github&color=green)
 
