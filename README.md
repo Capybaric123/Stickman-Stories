@@ -47,3 +47,7 @@ There is a wiki page for this comic made by the comic author what means that it 
 ## Discussions
 
 There is a discussion page for this website on github and also a room on gitter where you can chat about the comic series and also just chill and hangout, so I recomend on going back to the top of te page and clicking on that button which literally said ***chat on gitter***. So if you have any ideas how to improve the website or an idea for a new comic you can always tell that in the github discussions page, even though I recomend contacting me on my email which was shown earlier in the page in case you want to give me a new idea for a comic, but I hope you got te idea right, and if you just want to chat about your favourite or maybe not really comic series you can follow the button at the top of the page to see the gitter and also get and invite there. So good luck on your journey in to the fun and sometimes terrifying lore of the stickman-stories!
+
+## Contribution
+
+If you want to help with coding or making renders and other, you can email me and I will add you in the collaborators in github so you will have access to the code and will be able to help me in any way you want. We have a great ammount of different issue tags so you can find something you will like to do! I will always be glad to let other people join the project! I hope this helped you if you wanted to help!
