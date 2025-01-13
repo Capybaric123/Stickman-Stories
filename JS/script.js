@@ -28,3 +28,10 @@ async function fetchLatestComic() {
 }
 
 fetchLatestComic();
+
+function logChange(changeDescription) {
+    console.log(`Change Log: ${changeDescription}`);
+}
+
+// Example usage of logChange function
+logChange("Added a new function logChange to log the changes made to address the identified issue.");
