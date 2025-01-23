@@ -96,7 +96,7 @@ This is how to insert an image, but you will need a template where to place the 
 </div>
 
 <footer>
-    &copy; 2024 Stickman Stories. All rights reserved.
+    &copy; 2025 Stickman Stories. All rights reserved.
 </footer>
 
 </body>
@@ -197,7 +197,7 @@ Here is a template file which you will place in to the Wiki folder:
 </div>
 
 <footer>
-    &copy; 2024 Stickman Stories. All rights reserved.
+    &copy; 2025 Stickman Stories. All rights reserved.
 </footer>
 
 </body>
