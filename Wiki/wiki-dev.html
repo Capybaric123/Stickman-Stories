@@ -34,113 +34,113 @@
 
 				Inserting an image might seem easy, but don't get fooled by the simplicity! It is actually not that simple...
 
-				<pre>
-					<img src="PATH/TO/YOUR/IMAGE.extension" style="max-width: 100%;">
-				</pre>
+			<pre>
+				<img src="PATH/TO/YOUR/IMAGE.extension" style="max-width: 100%;">
+			</pre>
 
 				That was an example of a simple image, but there is a chance that you will need to center the image which will happen pretty often since you are making a webcomic.
 
 				In this case you will need to do this:
 
-				<pre>
-					<img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;">
-				</pre>
+			<pre>
+				<img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;">
+			</pre>
 
 				Now this is way longer than the previous part of code, and this is the interresting part about html.
 
 				But now you might think where to place it in the tamplate? Let me show you...
 
 
-				<pre>
-					<div class="comic-content">
-					</div>
-				</pre>
+			<pre>
+				<div class="comic-content">
+				</div>
+			</pre>
 
 				That is the place where you will put the image, here is an example:
 
-				<pre>
-					<div class="comic-content">
-					  <img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;">
-					</div>
-				</pre>
+			<pre>
+				<div class="comic-content">
+				  <img src="PATH/TO/YOUR/IMAGE.extension" style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;">
+				</div>
+			</pre>
 
 				## Comic template
 
 				This is how to insert an image, but you will need a template where to place the image and also the place where you will find the previous part of code in. So here is the template for a comic page:
 
-				<pre>
-					<!DOCTYPE html>
-					<html lang="en">
-					<head>
-						<meta charset="UTF-8">
-						<meta name="viewport" content="width=device-width, initial-scale=1.0">
-						<title>Stickman Stories - </title>
-						<script type="module" src="JS/md-block.js"></script>
-						<link rel="icon" href="images/icon.png" type="image/png">
-						<link rel="stylesheet" href="CSS/comic_style.css">
-					</head>
-					<body>
-						<div class="wrap">
-							<div class="main-body">
-								<header>
-									<h1>Stickman Stories</h1>
-									<hr>
-								</header>
+			<pre>
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>Stickman Stories - </title>
+					<script type="module" src="JS/md-block.js"></script>
+					<link rel="icon" href="images/icon.png" type="image/png">
+					<link rel="stylesheet" href="CSS/comic_style.css">
+				</head>
+				<body>
+					<div class="wrap">
+						<div class="main-body">
+							<header>
+								<h1>Stickman Stories</h1>
+								<hr>
+							</header>
 
-								<div class="comic-content">
-								</div>
-							</div>
-							<div class="sidebar">
-								<div class="sidebar-item">
-									<ul>
-										<li>
-											<a href="index.html">Home</a>
-										</li>
-										<li>
-											<a href="info.html">Info</a>
-										</li>
-										<li>
-											<a href="changelog.html">Changelog</a>
-										</li>
-										<li>
-											<a href="lore_book.html">Lore book</a>
-										</li>
-										<li>
-											<a href="https://github.com/Capybaric123/Stickman-Stories/wiki/" target="_blank">Wiki</a>
-										</li>
-									</ul>
-								</div>
+							<div class="comic-content">
 							</div>
 						</div>
-						<div class="comic-list">
+						<div class="sidebar">
+							<div class="sidebar-item">
+								<ul>
+									<li>
+										<a href="index.html">Home</a>
+									</li>
+									<li>
+										<a href="info.html">Info</a>
+									</li>
+									<li>
+										<a href="changelog.html">Changelog</a>
+									</li>
+									<li>
+										<a href="lore_book.html">Lore book</a>
+									</li>
+									<li>
+										<a href="https://github.com/Capybaric123/Stickman-Stories/wiki/" target="_blank">Wiki</a>
+									</li>
+								</ul>
+							</div>
 						</div>
+					</div>
+					<div class="comic-list">
+					</div>
 
-					<footer>
-						&copy; 2025 Stickman Stories. All rights reserved.
-					</footer>
+				<footer>
+					&copy; 2025 Stickman Stories. All rights reserved.
+				</footer>
 
-					</body>
-					</html>
-				</pre>
+				</body>
+				</html>
+			</pre>
 
 				## Adding a path
 
 				Also you will need to go to the index.html which is basically the home page and also insert a link to your comic page which should be located in the root folder for this case.
 
-				<pre>
-					<div class="comic-list">
-						<a href="comic1.html">Stickman Stories - The begining of something bad</a>
-						<a href="comic2.html">Stickman Stories - The journey</a>
-						<a href="WIP.html">Stickman Stories - The command</a>
-						<!-- Add more links as you create new comic pages -->
-					</div>
-				</pre>
+			<pre>
+				<div class="comic-list">
+					<a href="comic1.html">Stickman Stories - The begining of something bad</a>
+					<a href="comic2.html">Stickman Stories - The journey</a>
+					<a href="WIP.html">Stickman Stories - The command</a>
+					<!-- Add more links as you create new comic pages -->
+				</div>
+			</pre>
 
 				That was the part where you will insert your link to your page, here is how you add a link:
 
-				<pre>
-					<a href="PATH/TO/YOUR/PAGE">Button Text</a>
-				</pre>
+			<pre>
+				<a href="PATH/TO/YOUR/PAGE">Button Text</a>
+			</pre>
 
 				## Changelog
 
@@ -152,9 +152,9 @@
 
 				Now that you know what is a changelog I will show you a template which you can paste in the comic-content "div" element in the changelog page:
 
-				<pre>
-					<p class="anouncement-paragraph" style="display: list-item; margin-left: 2em;"></p>
-				</pre>
+			<pre>
+				<p class="anouncement-paragraph" style="display: list-item; margin-left: 2em;"></p>
+			</pre>
 
 				## Wiki
 
@@ -166,55 +166,55 @@
 
 				Here is a template file which you will place in to the Wiki folder:
 
-				<pre>
-					<!DOCTYPE html>
-					<html lang="en">
-					<head>
-						<meta charset="UTF-8">
-						<meta name="viewport" content="width=device-width, initial-scale=1.0">
-						<title>Stickman Stories - Wiki</title>
-						<script type="module" src="../JS/md-block.js"></script>
-						<link rel="icon" href="../images/icon.png" type="image/png">
-						<link rel="stylesheet" href="../CSS/comic_style.css">
-					</head>
-					<body>
-						<div class="wrap">
-							<div class="main-body">
-								<header>
-									<h1>Stickman Stories</h1>
-									<hr>
-								</header>
+			<pre>
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<meta name="viewport" content="width=device-width, initial-scale=1.0">
+					<title>Stickman Stories - Wiki</title>
+					<script type="module" src="../JS/md-block.js"></script>
+					<link rel="icon" href="../images/icon.png" type="image/png">
+					<link rel="stylesheet" href="../CSS/comic_style.css">
+				</head>
+				<body>
+					<div class="wrap">
+						<div class="main-body">
+							<header>
+								<h1>Stickman Stories</h1>
+								<hr>
+							</header>
 
-								<div class="comic-content">
-									<md-block>
-									[//] # (You type your content here)
-									</md-block>
-								</div>
-							</div>
-							<div class="sidebar">
-								<div class="sidebar-item">
-									<ul>
-										<li>
-											<a href="../index.html">Home</a>
-										</li>
-										<li>
-											<a href="../info.html">Info</a>
-										</li>
-										<li>
-											<a href="../changelog.html">Changelog</a>
-										</li>
-										<li>
-											<a href="../lore_book.html">Lore book</a>
-										</li>
-										<li>
-											<a href="wiki.html">Wiki</a>
-										</li>
-									</ul>
-								</div>
+							<div class="comic-content">
+								<md-block>
+								[//] # (You type your content here)
+								</md-block>
 							</div>
 						</div>
-					<div class="comic-list">
+						<div class="sidebar">
+							<div class="sidebar-item">
+								<ul>
+									<li>
+										<a href="../index.html">Home</a>
+									</li>
+									<li>
+										<a href="../info.html">Info</a>
+									</li>
+									<li>
+										<a href="../changelog.html">Changelog</a>
+									</li>
+									<li>
+										<a href="../lore_book.html">Lore book</a>
+									</li>
+									<li>
+										<a href="wiki.html">Wiki</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
+				<div class="comic-list">
+				</div>
 
 					<footer>
 						&copy; 2025 Stickman Stories. All rights reserved.
