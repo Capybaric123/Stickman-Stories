@@ -12,6 +12,10 @@ header {
     text-align: center;
 }
 
+md-block {
+    font-family: Helvetica Neue, sans-serif;
+}
+
 .wrap {
     margin: 0 auto;
     width: 970px;
