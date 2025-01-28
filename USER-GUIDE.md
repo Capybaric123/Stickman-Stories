@@ -86,7 +86,10 @@ This is how to insert an image, but you will need a template where to place the 
                     <a href="lore_book.html">Lore book</a>
                 </li>
                 <li>
-                    <a href="https://github.com/Capybaric123/Stickman-Stories/wiki/" target="_blank">Wiki</a>
+                    <a href="blog.html">Blog</a>
+                </li>
+                <li>
+                    <a href="Wiki/wiki.html">Wiki</a>
                 </li>
             </ul>
         </div>
