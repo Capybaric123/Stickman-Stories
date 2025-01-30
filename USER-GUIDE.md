@@ -83,7 +83,7 @@ This is how to insert an image, but you will need a template where to place the 
                     <a href="changelog.html">Changelog</a>
                 </li>
                 <li>
-                    <a href="lore_book.html">Lore book</a>
+                    <a href="lore-book.html">Lore book</a>
                 </li>
                 <li>
                     <a href="blog.html">Blog</a>
@@ -187,7 +187,7 @@ Here is a template file which you will place in to the Wiki folder:
                     <a href="../changelog.html">Changelog</a>
                 </li>
                 <li>
-                    <a href="../lore_book.html">Lore book</a>
+                    <a href="../lore-book.html">Lore book</a>
                 </li>
                 <li>
                     <a href="wiki.html">Wiki</a>
