@@ -17,6 +17,10 @@ table, th, td {
 	border-collapse: collapse;
 }
 
+th, td {
+	padding: 5px;
+}
+
 .p {
     font-family: Helvetica Neue, sans-serif;
 }
