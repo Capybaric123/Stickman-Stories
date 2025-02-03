@@ -12,6 +12,11 @@ header {
     text-align: center;
 }
 
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
 .p {
     font-family: Helvetica Neue, sans-serif;
 }
