@@ -94,6 +94,10 @@ header {
     color: black;
 }
 
+.anouncements a {
+	color: #40659b;
+}
+
 .anouncement-paragraph {
     font-size: 20px;
     color: black;
