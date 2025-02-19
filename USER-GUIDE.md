@@ -207,6 +207,18 @@ Here is a template file which you will place in to the Wiki folder:
 </html>
 ```
 
+## Links
+
+So, let's say you are just a guy wanting to help me with the lore book, and you already wrote your story, but now it's time to add it to the gigantic table of contents, though there is not that much to be scared of actually!
+
+I can already tell that first if you wrote a new chapter, you just add this structure to the table of contents:
+
+```
+- **[Your chapter name that will appear on the page itself](#your-chapter-number)**
+    - **[One of your stories](#and-a-link-to-it-like-this)**
+    - **[And it goes on for all of the stories in the chapter](#just-add-a-hash-and-the-name-replace-spaces)**
+```
+
 ## Help
 
 If you think that you need some help from me you can always use this email to contact me anytime: <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com" target="_blank">dancho321sorokin@gmail.com</a>
