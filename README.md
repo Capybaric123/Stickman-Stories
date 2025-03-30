@@ -32,7 +32,7 @@ There is a chance that you will need to wait for a while, because the software d
 
 ## Comic Creation
 
-For help see [COMIC-REQUESTS.md](COMIC-REQUESTS)
+For help see [COMIC-REQUESTS.md](COMIC-REQUESTS.md)
 
 ## Troubleshooting
 
