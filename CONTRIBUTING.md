@@ -10,7 +10,7 @@ If you want to help us with making new comic pages, adding on to the lore book o
 | :----- | :------ |
 | New chapter | If you want to add a new chapter to the lore book you need to ***NOT USE JOKES ABOUT TRAGEDIES!*** |
 | New comic | If you want to make a new comic for the website you need to ***KEEP IT PG-13*** |
-| New idea | If you have an idea for a new comic, but you can't make it real yourself you can email: [dancho321sorokin@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com) |
+| New idea | If you have an idea for a new comic, but you can't make it real yourself you can email: <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=dancho321sorokin@gmail.com">dancho321sorokin@gmail.com</a> |
 
 ## Issues
 
