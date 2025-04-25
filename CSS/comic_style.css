@@ -91,6 +91,32 @@ th, td {
     color: #40659b;
 }
 
+.marquee-container {
+    width: 100vw;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee {
+    padding-left: 100vw;
+    display: inline-block;
+    animation: marquee 5s linear infinite;
+    animation-play-state: running;
+}
+
+.marquee.paused, .marquee-container:hover .marquee {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 footer {
     text-align: center;
     margin-top: 20px;
