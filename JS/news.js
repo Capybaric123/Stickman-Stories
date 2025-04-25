@@ -1,7 +1,7 @@
 //list of slides to be shown
 const content = [
-    'first slide',
-    'second slide',
+    'New script for announcement page!',
+    'Updated contribution guide!',
 ];
 
 let key = 0;
