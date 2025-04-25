@@ -2,6 +2,7 @@
 const content = [
     'New script for announcement page!',
     'Updated contribution guide!',
+    ''
 ];
 
 let key = 0;
