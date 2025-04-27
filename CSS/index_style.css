@@ -108,15 +108,39 @@ header {
     color: #40659b;
 }
 
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    color: black;
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f0;
 }
-ul.marquee li {
-    display: inline-block;
-    padding: 10px 20px;
+
+.marquee-content {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  white-space: nowrap;
 }
+
+.slide {
+  flex: 0 0 auto;
+  width: 200px;
+  margin: 0 10px;
+  background: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 footer {
     text-align: center;
