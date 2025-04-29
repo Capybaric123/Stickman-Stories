@@ -91,6 +91,10 @@ th, td {
     color: #40659b;
 }
 
+.table-of-contents {
+    display: flex;
+}
+
 .marquee-container {
     width: 100vw;
     overflow: hidden;
