@@ -36,12 +36,12 @@ header {
     padding: 20px;
     background: #979797;
     flex-shrink: 0; /* Prevents sidebar from shrinking */
-    border-left: 1px solid #8f8f8f;
-    position: fixed;
+    border-left: 1px solid #8f8f8f;    
 }
 
 .sidebar-item ul li {
     padding: 0, 0, 0, 15%;
+    position: fixed;
 }
 
 .sidebar-item a {
