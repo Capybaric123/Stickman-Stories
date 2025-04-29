@@ -37,6 +37,7 @@ header {
     background: #979797;
     flex-shrink: 0; /* Prevents sidebar from shrinking */
     border-left: 1px solid #8f8f8f;
+    position: fixed;
 }
 
 .sidebar-item ul li {
