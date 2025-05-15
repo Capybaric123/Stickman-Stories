@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniil Sorokin">
+    <meta name="description" content="A simple website for my comic named Stickman-Stories!">
+    <meta name="google-site-verification" content="XlU26dF4tzitZ59KXltZ5WyU8FUP7-bEC27a3iNqZZ0" />
+    <title>Stickman Stories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Didot&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/icon.png" type="image/png"> <!-- Link to external Favicon -->
+    <link rel="stylesheet" href="CSS/index_style.css"> <!-- Link to the external CSS -->
+    <script type="module" src="JS/md-block.js"></script> <!-- Link to the external JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Link to jQuery -->
+	<script src="JS/script.js"></script> <!-- Link to the external JS -->
+    <script src="JS/news.js"></script> <!-- Link to external JS -->
+</head>
+<body>
+<div class="wrap">
+    <div class="main-body">
+        <header>
+            <h1>Stickman Stories</h1>
+            <hr>
+        </header>
+        <div class="anouncements">
+            <md-block>
+                <h1 style="text-align: center;">Oops! It seems you took a wrong turn!</h1>
+
+                _Sorry about that..._
+                ---
+            </md-block>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-item">
+            <ul>
+                <li>
+                    <a target="_blank" href="https://github.com/Capybaric123/Stickman-Stories/blob/main/README.md">Info</a>
+                </li>
+                <li>
+                    <a href="lore-book.html">Lore book</a>
+                </li>
+                <li>
+                    <a href="changelog.html">Changelog</a>
+                </li>
+                <li>
+                    <a href="Wiki/wiki.html">Wiki</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="latest-comic-header">
+    <h1>Latest Comic</h1>
+</div>
+
+<div class="comic" id="latest-comic-container">
+    <p id="latest-comic-description">Loading latest comic...</p>
+</div>
+
+<h1 style="display: block; text-align: center; color: black;">Chapter 1</h1>
+<hr style="width: 940px;" size="1px">
+<div class="comic-list">
+</div>
+
+<footer>
+    &copy; 2025 Stickman Stories. All rights reserved.
+</footer>
+
+</body>
+</html>
